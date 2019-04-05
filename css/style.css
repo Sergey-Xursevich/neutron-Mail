@@ -393,6 +393,9 @@ template {
 header {
   height: 889px;
   background-image: url("../img/background.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
 .nav {
@@ -724,5 +727,26 @@ body {
 .container {
   width: 1800px;
   margin: 0 auto;
+}
+
+@media (max-width: 1800px) {
+  .container {
+    width: 1200px;
+  }
+  .nav {
+    padding: 75px 50px 105px;
+  }
+  .nav__logo {
+    margin-right: 180px;
+  }
+  .link__social {
+    margin-left: 170px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 992px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
