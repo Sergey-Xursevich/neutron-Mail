@@ -391,11 +391,11 @@ template {
 }
 
 header {
-  height: 889px;
+  height: 908px;
   background-image: url("../img/background.jpg");
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: top;
+  background-size: 100% 109%;
 }
 
 .nav {
@@ -712,6 +712,125 @@ header {
 
 .link__social--icon:nth-child(3):hover {
   color: #00e5e5;
+}
+
+main {
+  margin-bottom: 1200px;
+}
+
+.main__subscription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: grow;
+      -ms-flex-positive: grow;
+          flex-grow: grow;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1252px;
+  margin-left: 308px;
+  margin-bottom: 130px;
+}
+
+.main__subscription__additional__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 34px;
+  height: 53px;
+}
+
+.main__subscription__additional__image-1 {
+  background-image: url("../img/shield.png");
+  width: 73px;
+  height: 68px;
+}
+
+.main__subscription__additional__image-2 {
+  background-image: url("../img/lock.png");
+  background-position: -15px -9px;
+  width: 72px;
+  height: 74px;
+}
+
+.main__subscription__additional__image-3 {
+  background-image: url("../img/keys.png");
+  background-position: -6px 0px;
+  width: 71px;
+  height: 60px;
+}
+
+.main__subscription__additional__subtitle {
+  width: 374px;
+  color: #959393;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.1px;
+  padding-left: 13px;
+}
+
+.main__subscription__additional__asset {
+  color: #555555;
+  font-size: 30px;
+  letter-spacing: 0.3px;
+  line-height: 44px;
+}
+
+.main__subscription__additional__asset-span {
+  display: block;
+  color: #959393;
+  font-size: 18px;
+  letter-spacing: 0.18px;
+  line-height: 12px;
+}
+
+.main__slogan {
+  width: 625px;
+  margin-left: 478px;
+  text-align: right;
+  margin-bottom: 27px;
+}
+
+.main__slogan__title {
+  margin: 0px;
+  color: #535353;
+  font-size: 60px;
+  line-height: 44px;
+  letter-spacing: 0.6px;
+}
+
+.main__slogan__subtitle {
+  color: #959393;
+  font-size: 24px;
+  line-height: 22px;
+  letter-spacing: 0.24px;
+}
+
+.main__slogan__subtitle-span {
+  color: #f65151;
+}
+
+.main__slogan__additional {
+  width: 334px;
+  margin-left: 971px;
+  color: #676767;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.26px;
+  padding: 21px 30px;
+  border-radius: 31px;
+  border: 1px solid #b9b9b9;
+  background-color: #ffffff;
+}
+
+.main__slogan__additional:before {
+  content: "";
+  display: inline-block;
+  width: 700px;
+  vertical-align: center;
+  height: 1px;
+  background-color: #bfbfbf;
 }
 
 *, *:after, *:before {
