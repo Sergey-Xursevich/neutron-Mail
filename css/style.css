@@ -716,6 +716,7 @@ header {
 
 main {
   margin-bottom: 1200px;
+  position: relative;
 }
 
 .main__subscription {
@@ -728,9 +729,44 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 1252px;
   margin-left: 308px;
   margin-bottom: 130px;
+}
+
+.main__subscription__additional:nth-child(2)::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 210px;
+  background-color: #b9b9b9;
+  position: absolute;
+  top: -118px;
+  left: 40.25%;
+}
+
+.main__subscription__additional:nth-child(2)::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 436px;
+  background-color: #b9b9b9;
+  position: absolute;
+  top: 9px;
+  right: 36.95%;
+}
+
+.main__subscription__additional:nth-child(3)::after {
+  content: '';
+  display: inline-block;
+  width: 247px;
+  height: 1px;
+  background-color: #b9b9b9;
+  position: absolute;
+  top: 7px;
+  right: 0;
 }
 
 .main__subscription__additional__title {
@@ -812,6 +848,7 @@ main {
 }
 
 .main__slogan__additional {
+  position: relative;
   width: 334px;
   margin-left: 971px;
   color: #676767;
@@ -827,10 +864,12 @@ main {
 .main__slogan__additional:before {
   content: "";
   display: inline-block;
-  width: 700px;
-  vertical-align: center;
+  width: 1031px;
   height: 1px;
   background-color: #bfbfbf;
+  position: absolute;
+  left: -310%;
+  top: 30px;
 }
 
 *, *:after, *:before {
@@ -861,11 +900,57 @@ body {
   .link__social {
     margin-left: 170px;
   }
+  .main__subscription {
+    margin-left: 0;
+  }
+  .main__subscription__additional:nth-child(2)::before {
+    display: none;
+  }
+  .main__subscription__additional:nth-child(2)::after {
+    display: none;
+  }
+  .main__subscription__additional:nth-child(3)::after {
+    display: none;
+  }
+  .main__slogan__additional {
+    margin-left: 770px;
+  }
+  .main__slogan__additional::before {
+    width: 1327px;
+    left: -400%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .container {
+    width: 992px;
+  }
+  .main__slogan {
+    margin: 0 auto;
+  }
+  .main__slogan__additional {
+    margin-left: 575px;
+  }
+  .main__slogan__additional::before {
+    display: none;
+  }
+  .main__subscription {
+    width: 992px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .main__subscription__additional:nth-child(2) {
+    margin-bottom: 50px;
+  }
+  .link__social {
+    margin-left: 80px;
+  }
 }
 
 @media (max-width: 992px) {
   .container {
-    width: 992px;
+    width: 768px;
   }
 }
 /*# sourceMappingURL=style.css.map */

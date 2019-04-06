@@ -7,10 +7,49 @@
       margin-right: 180px
   .link__social
     margin-left: 170px
-
-@media (max-width: 992px)
+  .main__subscription
+    margin-left: 0
+    &__additional
+      &:nth-child(2)
+        &::before
+          display: none
+        &::after
+          display: none
+      &:nth-child(3)
+        &::after
+          display: none
+      &__subtitle
+  .main
+    &__slogan
+      &__additional
+        margin-left: 770px
+        &::before
+          width: 1327px
+          left: -400%
+        
+@media (max-width: 1500px)
   .container
     width: 992px
+  .main
+    &__slogan
+      margin: 0 auto
+      &__additional
+        margin-left: 575px
+        &::before
+          display: none
+    &__subscription
+      width: 992px
+      justify-content: center
+      &__additional:nth-child(2) 
+        margin-bottom: 50px
+  .link
+    &__social
+      margin-left: 80px
+    
+@media (max-width: 992px)
+  .container
+    width: 768px
+
 
 
 // @media (max-width: 768px)
