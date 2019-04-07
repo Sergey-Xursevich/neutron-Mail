@@ -936,10 +936,9 @@ main {
 }
 
 .device {
-  height: 1052px;
+  height: 900px;
   position: relative;
   background: linear-gradient(15deg, white 20%, #efefef 110%);
-  margin-bottom: 1200px;
 }
 
 .device::before {
@@ -1165,6 +1164,74 @@ main {
   background: linear-gradient(to bottom right, #582c7e, #616fc5);
   font-size: 18px;
   letter-spacing: 0.18px;
+}
+
+footer {
+  margin-bottom: 1200px;
+}
+
+.container__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__contact {
+  margin-left: 220px;
+}
+
+.footer__contact__general {
+  padding-top: 9px;
+  color: #5c5c5c;
+  font-size: 14px;
+  line-height: 2px;
+  letter-spacing: 0.14px;
+}
+
+.footer__contact__general:last-child {
+  padding-top: 29px;
+}
+
+.footer__contact__general-span {
+  font-family: 'Titillium Web Bold', sans-serif;
+}
+
+.footer__contact__general-span-last {
+  display: block;
+  text-decoration: underline;
+  margin-top: -7px;
+}
+
+.footer__company {
+  margin-left: 410px;
+  width: 137px;
+  text-align: right;
+}
+
+.footer__company__title {
+  font-family: 'Titillium Web Bold', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.18px;
+  line-height: 23px;
+  color: #5c5c5c;
+}
+
+.footer__legal {
+  width: 137px;
+  text-align: right;
+}
+
+.footer__netronMail {
+  width: 137px;
+  text-align: right;
+}
+
+.footer__list {
+  color: #5c5c5c;
+  font-size: 18px;
+  letter-spacing: 0.14px;
+  list-style: square;
+  list-style-position: outside;
 }
 
 *, *:after, *:before {
