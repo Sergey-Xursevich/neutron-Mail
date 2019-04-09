@@ -39,11 +39,22 @@
 }
 
 @font-face {
-  font-family: 'Malaga Regular';
-  src: url('../fonts/Malaga-Regular.eot');
-  src: url('../fonts/Malaga-Regular.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Malaga-Regular.woff') format('woff'),
-  url('../fonts/Malaga-Regular.ttf') format('truetype');
+  font-family: 'Malaga Regular Italic';
+  src: url('../fonts/MalagaNarrowOT-RegItalic.eot');
+  src: url('../fonts/MalagaNarrowOT-RegItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/MalagaNarrowOT-RegItalic.woff') format('woff'),
+  url('../fonts/MalagaNarrowOT-RegItalic.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Malaga Regular Medium Italic';
+  src: url('../fonts/MalagaOT-MedItalic.eot');
+  src: url('../fonts/MalagaOT-MedItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/MalagaOT-MedItalic.woff') format('woff'),
+  url('../fonts/MalagaOT-MedItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+

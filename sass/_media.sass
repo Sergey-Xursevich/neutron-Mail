@@ -52,6 +52,9 @@
   .link
     &__social
       margin: 80px
+  .article
+    &__context
+      margin: auto
     
 @media (max-width: 992px)
   .container
@@ -101,6 +104,11 @@
     &__slogan
       &__additional
         margin-left: 360px
+  .article
+    &__newspaper
+      display: none
+    &__context
+      margin: auto
 
 @media (max-width: 768px)
   .container
@@ -124,10 +132,12 @@
           margin-bottom: 15px
     &__slogan
       text-align: center
-      width: 360px
+      width: 480px
       &__additional
         margin: auto
-  
+  .article
+    &__context
+      width: 465px
   
 
 @media (max-width: 576px)
@@ -172,4 +182,15 @@
     &__links
       &-item
         padding: 10px 7px
-  
+  .article
+    &__context
+      width: 350px
+  .main
+    &__slogan
+      width: 350px
+      &__title
+        line-height: 50px
+    &__subscription
+      &__additional
+        &__subtitle
+          width: 330px  

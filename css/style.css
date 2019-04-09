@@ -374,9 +374,17 @@ template {
 }
 
 @font-face {
-  font-family: 'Malaga Regular';
-  src: url("../fonts/Malaga-Regular.eot");
-  src: url("../fonts/Malaga-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Malaga-Regular.woff") format("woff"), url("../fonts/Malaga-Regular.ttf") format("truetype");
+  font-family: 'Malaga Regular Italic';
+  src: url("../fonts/MalagaNarrowOT-RegItalic.eot");
+  src: url("../fonts/MalagaNarrowOT-RegItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/MalagaNarrowOT-RegItalic.woff") format("woff"), url("../fonts/MalagaNarrowOT-RegItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Malaga Regular Medium Italic';
+  src: url("../fonts/MalagaOT-MedItalic.eot");
+  src: url("../fonts/MalagaOT-MedItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/MalagaOT-MedItalic.woff") format("woff"), url("../fonts/MalagaOT-MedItalic.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -931,7 +939,7 @@ main {
 
 .article__newspaper {
   height: 66px;
-  padding-left: 31px;
+  padding-left: 33px;
   margin-bottom: 50px;
 }
 
@@ -959,20 +967,20 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 562px;
+  width: 588px;
   margin-left: 346px;
 }
 
 .article__context__text {
   color: #101010;
-  font-family: "Malaga Regular", sans-serif;
+  font-family: "Malaga Regular Medium Italic", sans-serif;
   font-size: 24px;
-  letter-spacing: 0.24px;
+  letter-spacing: 0.1px;
   line-height: 31px;
 }
 
 .article__context__text-span {
-  display: inline-block;
+  display: block;
   color: #727272;
   font-size: 16px;
   letter-spacing: 0.16px;
@@ -982,7 +990,7 @@ main {
 
 .article__context__slider ul li {
   list-style: disc;
-  margin: 3px 0 0 7px;
+  margin: 1px 0 0 6px;
   font-size: 31px;
   color: #101010;
   line-height: 23px;
@@ -990,6 +998,14 @@ main {
 
 .article__context__slider ul li:not(:first-child) {
   opacity: 0.3;
+}
+
+ul {
+  -webkit-padding-start: 41px;
+          padding-inline-start: 41px;
+  -webkit-margin-before: -2px;
+          margin-block-start: -2px;
+  padding-right: 7px;
 }
 
 .device {
@@ -1373,6 +1389,9 @@ body {
   .link__social {
     margin: 80px;
   }
+  .article__context {
+    margin: auto;
+  }
 }
 
 @media (max-width: 992px) {
@@ -1432,6 +1451,12 @@ body {
   .main__slogan__additional {
     margin-left: 360px;
   }
+  .article__newspaper {
+    display: none;
+  }
+  .article__context {
+    margin: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1463,10 +1488,13 @@ body {
   }
   .main__slogan {
     text-align: center;
-    width: 360px;
+    width: 480px;
   }
   .main__slogan__additional {
     margin: auto;
+  }
+  .article__context {
+    width: 465px;
   }
 }
 
@@ -1534,6 +1562,18 @@ body {
   }
   .menu__links-item {
     padding: 10px 7px;
+  }
+  .article__context {
+    width: 350px;
+  }
+  .main__slogan {
+    width: 350px;
+  }
+  .main__slogan__title {
+    line-height: 50px;
+  }
+  .main__subscription__additional__subtitle {
+    width: 330px;
   }
 }
 /*# sourceMappingURL=style.css.map */
