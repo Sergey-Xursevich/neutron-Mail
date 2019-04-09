@@ -797,11 +797,11 @@ main {
   content: '';
   display: inline-block;
   width: 1px;
-  height: 210px;
+  height: 205px;
   background-color: #b9b9b9;
   position: absolute;
-  top: -118px;
-  left: 40.25%;
+  top: -117px;
+  left: 40.13%;
 }
 
 .main__subscription__additional:nth-child(2)::after {
@@ -812,17 +812,17 @@ main {
   background-color: #b9b9b9;
   position: absolute;
   top: 9px;
-  right: 36.95%;
+  right: 37.1%;
 }
 
 .main__subscription__additional:nth-child(3)::after {
   content: '';
   display: inline-block;
-  width: 247px;
+  width: 245px;
   height: 1px;
   background-color: #b9b9b9;
   position: absolute;
-  top: 7px;
+  top: 10px;
   right: 0;
 }
 
@@ -921,12 +921,12 @@ main {
 .main__slogan__additional:before {
   content: "";
   display: inline-block;
-  width: 1031px;
+  width: 1030px;
   height: 1px;
   background-color: #bfbfbf;
   position: absolute;
   left: -310%;
-  top: 30px;
+  top: 28px;
 }
 
 .article__newspaper {
@@ -1299,6 +1299,7 @@ footer {
 body {
   height: 100vh;
   font-family: 'Titillium Web Regular', sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -1424,6 +1425,13 @@ body {
   .menu__icon {
     height: 24px;
   }
+  .main__subscription {
+    width: 760px;
+    margin: 0 auto 85px;
+  }
+  .main__slogan__additional {
+    margin-left: 360px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1442,6 +1450,23 @@ body {
   }
   .nav__logo {
     margin-right: 10px;
+  }
+  .main__subscription {
+    width: 360px;
+    margin-bottom: 30px;
+  }
+  .main__subscription__additional {
+    margin-bottom: 15px;
+  }
+  .main__subscription__additional:nth-child(2) {
+    margin-bottom: 15px;
+  }
+  .main__slogan {
+    text-align: center;
+    width: 360px;
+  }
+  .main__slogan__additional {
+    margin: auto;
   }
 }
 
