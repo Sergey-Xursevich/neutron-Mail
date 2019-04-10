@@ -18,38 +18,41 @@
         width: 437px
         position: relative
         text-align: right
-        margin-bottom: 241px
+        margin-bottom: 235px
         &__subscription
             width: 437px
-            z-index: 1
             margin-top: -95px
-            margin-left: -15px
+            margin-left: -11px
+            z-index: 2
+            & img
+                z-index: 1
             &::after
                 content: ''
                 display: inline-block
-                width: 1186px
+                width: 1475px
                 height: 1px
                 background-color: #b9b9b9
                 bottom: -146px
+                left: -271px
                 position: relative
         &__title
             color: #535353
             font-size: 36px
             line-height: 22px
             letter-spacing: 0.36px
-            margin-bottom: 27px
+            margin-bottom: 25px
         &__subtitle
             color: #959393
             font-size: 16px
-            line-height: 21px
-            letter-spacing: 0.1px
-            margin-bottom: 29px
+            line-height: 22px
+            letter-spacing: 0.2px
+            margin-bottom: 28px
         &__link
             margin-right: 12px
         &__img
             position: absolute
-            bottom: -181px
-            left: 264px
+            bottom: -160px
+            left: 269px
             z-index: 1
     &__support
         text-align: center
@@ -57,6 +60,7 @@
             color: #535353
             font-size: 36px
             letter-spacing: 0.36px
+            margin-block-end: 39px
             line-height: 0
         &__subtitle
             color: #7c7c7c
@@ -108,7 +112,7 @@
             &-4
                 width: 130px
                 height: 34px
-                margin-left: 17px
+                margin-left: 20px
                 background-image: url('../img/Company/QuoVadis-black.png')
                 &:hover
                     background-image: url('../img/Company/QuoVadis.png')
@@ -140,18 +144,23 @@
             
 .button
     &__upgrade
-        padding: 18px 24px
-        margin-right: 56px
-        box-shadow: 0px 8px 10px #abb8da
-        background: linear-gradient(to bottom right, #582c7e, #616fc5)
+        padding: 18px 26px
+        margin-right: 48px
+        box-shadow: 0px 8px 10px #7382ad
+        background: linear-gradient(to bottom right, #646c92, #5f2f6a)
         font-size: 18px
         letter-spacing: 0.18px
         margin-bottom: 90px
+        &:hover
+            cursor: pointer
+            background: linear-gradient(to bottom right, #535979, #201023)            
     &__donate
-        padding: 19px 45px
-        box-shadow: 0px 8px 10px #abb8da
-        background: linear-gradient(to bottom right, #582c7e, #616fc5)
+        padding: 19px 48px
+        box-shadow: 0px 8px 10px #91dad4
+        background: linear-gradient(to bottom right, #36bae1, #5e7bea)
         font-size: 18px
         letter-spacing: 0.18px
-
+        &:hover
+            cursor: pointer
+            background: linear-gradient(to bottom right, #11596f, #4a6ae8)
 

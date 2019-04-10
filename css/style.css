@@ -977,6 +977,7 @@ main {
   font-size: 24px;
   letter-spacing: 0.1px;
   line-height: 31px;
+  z-index: 2;
 }
 
 .article__context__text-span {
@@ -985,7 +986,7 @@ main {
   font-size: 16px;
   letter-spacing: 0.16px;
   line-height: 32px;
-  margin-bottom: 207px;
+  margin-bottom: 179px;
 }
 
 .article__context__slider ul li {
@@ -1036,23 +1037,28 @@ ul {
   width: 437px;
   position: relative;
   text-align: right;
-  margin-bottom: 241px;
+  margin-bottom: 235px;
 }
 
 .device__laptop__subscription {
   width: 437px;
-  z-index: 1;
   margin-top: -95px;
-  margin-left: -15px;
+  margin-left: -11px;
+  z-index: 2;
+}
+
+.device__laptop__subscription img {
+  z-index: 1;
 }
 
 .device__laptop__subscription::after {
   content: '';
   display: inline-block;
-  width: 1186px;
+  width: 1475px;
   height: 1px;
   background-color: #b9b9b9;
   bottom: -146px;
+  left: -271px;
   position: relative;
 }
 
@@ -1061,15 +1067,15 @@ ul {
   font-size: 36px;
   line-height: 22px;
   letter-spacing: 0.36px;
-  margin-bottom: 27px;
+  margin-bottom: 25px;
 }
 
 .device__laptop__subtitle {
   color: #959393;
   font-size: 16px;
-  line-height: 21px;
-  letter-spacing: 0.1px;
-  margin-bottom: 29px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  margin-bottom: 28px;
 }
 
 .device__laptop__link {
@@ -1078,8 +1084,8 @@ ul {
 
 .device__laptop__img {
   position: absolute;
-  bottom: -181px;
-  left: 264px;
+  bottom: -160px;
+  left: 269px;
   z-index: 1;
 }
 
@@ -1091,6 +1097,8 @@ ul {
   color: #535353;
   font-size: 36px;
   letter-spacing: 0.36px;
+  -webkit-margin-after: 39px;
+          margin-block-end: 39px;
   line-height: 0;
 }
 
@@ -1172,7 +1180,7 @@ ul {
 .device__partner__img-4 {
   width: 130px;
   height: 34px;
-  margin-left: 17px;
+  margin-left: 20px;
   background-image: url("../img/Company/QuoVadis-black.png");
 }
 
@@ -1218,25 +1226,37 @@ ul {
 }
 
 .button__upgrade {
-  padding: 18px 24px;
-  margin-right: 56px;
-  -webkit-box-shadow: 0px 8px 10px #abb8da;
-          box-shadow: 0px 8px 10px #abb8da;
-  background: -webkit-gradient(linear, left top, right bottom, from(#582c7e), to(#616fc5));
-  background: linear-gradient(to bottom right, #582c7e, #616fc5);
+  padding: 18px 26px;
+  margin-right: 48px;
+  -webkit-box-shadow: 0px 8px 10px #7382ad;
+          box-shadow: 0px 8px 10px #7382ad;
+  background: -webkit-gradient(linear, left top, right bottom, from(#646c92), to(#5f2f6a));
+  background: linear-gradient(to bottom right, #646c92, #5f2f6a);
   font-size: 18px;
   letter-spacing: 0.18px;
   margin-bottom: 90px;
 }
 
+.button__upgrade:hover {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right bottom, from(#535979), to(#201023));
+  background: linear-gradient(to bottom right, #535979, #201023);
+}
+
 .button__donate {
-  padding: 19px 45px;
-  -webkit-box-shadow: 0px 8px 10px #abb8da;
-          box-shadow: 0px 8px 10px #abb8da;
-  background: -webkit-gradient(linear, left top, right bottom, from(#582c7e), to(#616fc5));
-  background: linear-gradient(to bottom right, #582c7e, #616fc5);
+  padding: 19px 48px;
+  -webkit-box-shadow: 0px 8px 10px #91dad4;
+          box-shadow: 0px 8px 10px #91dad4;
+  background: -webkit-gradient(linear, left top, right bottom, from(#36bae1), to(#5e7bea));
+  background: linear-gradient(to bottom right, #36bae1, #5e7bea);
   font-size: 18px;
   letter-spacing: 0.18px;
+}
+
+.button__donate:hover {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right bottom, from(#11596f), to(#4a6ae8));
+  background: linear-gradient(to bottom right, #11596f, #4a6ae8);
 }
 
 footer {
@@ -1392,6 +1412,9 @@ body {
   .article__context {
     margin: auto;
   }
+  .device__laptop__img {
+    margin-left: -130px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -1457,6 +1480,21 @@ body {
   .article__context {
     margin: auto;
   }
+  .device__support__title {
+    font-size: 35px;
+  }
+  .device__support__subtitle {
+    font-size: 23px;
+  }
+  .button__upgrade {
+    margin-bottom: 40px;
+  }
+  .device__partner {
+    width: 650px;
+  }
+  .device__partner__img-1, .device__partner__img-2, .device__partner__img-3, .device__partner__img-4, .device__partner__img-5, .device__partner__img-6, .device__partner__img-7 {
+    margin: 0 5px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1495,6 +1533,30 @@ body {
   }
   .article__context {
     width: 465px;
+  }
+  .device__support {
+    width: 500px;
+    margin: 0 auto;
+  }
+  .device__support__title {
+    letter-spacing: 0;
+    font-size: 31px;
+  }
+  .device__support__subtitle {
+    font-size: 21px;
+  }
+  .device__partner {
+    width: 550px;
+  }
+  .device__partner__image {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .device__partner__img-1, .device__partner__img-2, .device__partner__img-3, .device__partner__img-4, .device__partner__img-5, .device__partner__img-6, .device__partner__img-7 {
+    margin-bottom: 20px;
   }
 }
 
@@ -1574,6 +1636,45 @@ body {
   }
   .main__subscription__additional__subtitle {
     width: 330px;
+  }
+  .device__laptop {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .device__laptop__img {
+    display: none;
+  }
+  .device__laptop__subscription {
+    width: 353px;
+    margin-left: 0;
+  }
+  .device__laptop__subscription img {
+    width: 135px;
+  }
+  .device__laptop__subtitle {
+    font-size: 14px;
+  }
+  .device__support {
+    width: 360px;
+  }
+  .device__support__title {
+    font-size: 21px;
+  }
+  .device__support__subtitle {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+  .device__partner {
+    width: 360px;
+  }
+  .button__upgrade {
+    padding: 18px 20px;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  .button__donate {
+    padding: 18px 44px;
+    font-size: 12px;
   }
 }
 /*# sourceMappingURL=style.css.map */

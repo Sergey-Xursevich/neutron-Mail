@@ -55,6 +55,10 @@
   .article
     &__context
       margin: auto
+  .device
+    &__laptop
+      &__img
+        margin-left: -130px
     
 @media (max-width: 992px)
   .container
@@ -109,6 +113,21 @@
       display: none
     &__context
       margin: auto
+  .device
+    &__support
+      &__title
+        font-size: 35px
+      &__subtitle
+        font-size: 23px
+  .button
+    &__upgrade
+      margin-bottom: 40px
+  .device
+    &__partner
+      width: 650px
+      &__img-1, &__img-2, &__img-3, &__img-4, &__img-5, &__img-6, &__img-7
+        margin: 0 5px
+        
 
 @media (max-width: 768px)
   .container
@@ -138,6 +157,22 @@
   .article
     &__context
       width: 465px
+  .device
+    &__support
+      width: 500px
+      margin: 0 auto
+      &__title
+        letter-spacing: 0
+        font-size: 31px
+      &__subtitle
+        font-size: 21px
+    &__partner
+      width: 550px
+      &__image
+        flex-wrap: wrap
+        justify-content: center
+      &__img-1, &__img-2, &__img-3, &__img-4, &__img-5, &__img-6, &__img-7
+        margin-bottom: 20px
   
 
 @media (max-width: 576px)
@@ -194,3 +229,35 @@
       &__additional
         &__subtitle
           width: 330px  
+  .device
+    &__laptop
+      text-align: center
+      margin-bottom: 30px
+      &__img
+        display: none
+      &__subscription
+        width: 353px
+        margin-left: 0
+        & img
+          width: 135px
+      &__subtitle
+        font-size: 14px
+    &__support
+      width: 360px
+      &__title
+        font-size: 21px
+      &__subtitle
+        font-size: 15px
+        margin-bottom: 40px
+    &__partner
+      width: 360px
+
+  .button
+    &__upgrade
+      padding: 18px 20px
+      font-size: 12px
+      margin-right: 10px
+    &__donate
+      padding: 18px 44px
+      font-size: 12px
+
