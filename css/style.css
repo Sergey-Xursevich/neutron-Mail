@@ -543,7 +543,7 @@ header {
 .nav__link::before {
   display: block;
   content: "";
-  background-color: rgba(100, 115, 151, 0.49);
+  background-color: #5B4295;
   height: 1px;
   width: 0%;
   left: 50%;
@@ -1113,6 +1113,29 @@ ul {
 .device__partner {
   width: 974px;
   margin: 0 auto;
+  position: relative;
+}
+
+.device__partner:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 1455px;
+  height: 1px;
+  top: -21px;
+  left: -470px;
+  background-color: #b9b9b9;
+}
+
+.device__partner:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 1px;
+  height: 441px;
+  top: -21px;
+  right: -11px;
+  background-color: #b9b9b9;
 }
 
 .device__partner__slogan {
@@ -1260,29 +1283,83 @@ ul {
 }
 
 footer {
-  margin-bottom: 1200px;
+  height: 300px;
 }
 
 .container__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 67px;
+}
+
+.container__social {
+  margin-left: 198px;
+  font-size: 12px;
+  letter-spacing: 0.12px;
+  margin-bottom: 19px;
+  color: #5c5c5c;
+}
+
+.container__social a {
+  color: #5c5c5c;
+  margin-right: 21px;
+}
+
+.container__social a:not(:last-child)::after {
+  content: '/';
+  display: inline-block;
+  position: relative;
+  left: 11px;
+}
+
+.container__social a:hover {
+  cursor: pointer;
+  color: #5B4295;
+}
+
+.container__social p {
+  margin-top: 18px;
 }
 
 .footer__contact {
-  margin-left: 220px;
+  position: relative;
+  width: 213px;
+  margin-left: 217px;
+}
+
+.footer__contact:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 1px;
+  height: 131px;
+  top: 20px;
+  left: -18px;
+  background-color: #b9b9b9;
 }
 
 .footer__contact__general {
-  padding-top: 9px;
+  /**/
+  padding-top: 2px;
+  -webkit-margin-after: -9px;
+          margin-block-end: -9px;
   color: #5c5c5c;
   font-size: 14px;
-  line-height: 2px;
   letter-spacing: 0.14px;
 }
 
+.footer__contact__general a {
+  text-decoration: none;
+  color: #5c5c5c;
+}
+
+.footer__contact__general a:hover {
+  cursor: pointer;
+}
+
 .footer__contact__general:last-child {
-  padding-top: 29px;
+  padding-top: 25px;
 }
 
 .footer__contact__general-span {
@@ -1292,39 +1369,59 @@ footer {
 .footer__contact__general-span-last {
   display: block;
   text-decoration: underline;
-  margin-top: -7px;
+  margin-top: -17px;
 }
 
 .footer__company {
-  margin-left: 410px;
+  position: relative;
+  margin-left: 351px;
   width: 137px;
   text-align: right;
+}
+
+.footer__company:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 1px;
+  height: 300px;
+  top: 15px;
+  right: -28px;
+  background-color: #b9b9b9;
 }
 
 .footer__company__title {
   font-family: 'Titillium Web Bold', sans-serif;
   font-size: 18px;
   letter-spacing: 0.18px;
-  line-height: 23px;
+  line-height: 17px;
   color: #5c5c5c;
+  margin-bottom: 32px;
 }
 
 .footer__legal {
-  width: 137px;
+  width: 139px;
+  margin-left: 114px;
   text-align: right;
 }
 
 .footer__netronMail {
   width: 137px;
+  margin-left: 63px;
   text-align: right;
 }
 
 .footer__list {
   color: #5c5c5c;
-  font-size: 18px;
-  letter-spacing: 0.14px;
+  font-size: 14px;
   list-style: square;
-  list-style-position: outside;
+  direction: rtl;
+  padding-right: 13px;
+  margin-right: 4px;
+}
+
+.footer__list li {
+  margin-bottom: 7px;
 }
 
 *, *:after, *:before {
