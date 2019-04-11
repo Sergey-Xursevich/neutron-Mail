@@ -12,13 +12,22 @@
         top: -235px
         transform-origin: right top
         transform: skewY(-6deg)
+    &::after
+        content: ''
+        display: inline-block
+        width: 1475px
+        height: 1px
+        background-color: #b9b9b9
+        top: -458px
+        right: -451px
+        position: relative
     &__laptop
         display: flex
         margin: 0 auto
         width: 437px
         position: relative
         text-align: right
-        margin-bottom: 235px
+        margin-bottom: 252px
         &__subscription
             width: 437px
             margin-top: -95px
@@ -26,15 +35,6 @@
             z-index: 2
             & img
                 z-index: 1
-            &::after
-                content: ''
-                display: inline-block
-                width: 1475px
-                height: 1px
-                background-color: #b9b9b9
-                bottom: -146px
-                left: -271px
-                position: relative
         &__title
             color: #535353
             font-size: 36px
@@ -51,7 +51,7 @@
             margin-right: 12px
         &__img
             position: absolute
-            bottom: -160px
+            bottom: -179px
             left: 269px
             z-index: 1
     &__support

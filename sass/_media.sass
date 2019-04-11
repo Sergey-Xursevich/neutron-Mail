@@ -26,6 +26,10 @@
         &::before
           width: 1327px
           left: -400%
+  .device
+   &::after
+     width: 100%
+     right: 0 
   .footer
     &__company
       margin-left: 150px
@@ -50,9 +54,6 @@
       margin-bottom: 80px
       &__additional:nth-child(2) 
         margin-bottom: 50px
-  .device__laptop__subscription::after
-    width: 100%
-    left: 0de
   .nav
     &__logo
       margin-right: 77px
@@ -69,7 +70,13 @@
   .device
     &__laptop
       &__img
-        margin-left: -130px
+        margin-left: -145px
+    &__partner
+      &::before
+        width: 100%
+        left: 0
+      &::after
+        display: none
   .footer
     &__contact
       margin: 0 auto
@@ -133,12 +140,22 @@
       display: none
     &__context
       margin: auto
+      &__text-span
+        margin-bottom: 220px
   .device
+    &::after
+      top: -370px
     &__support
       &__title
         font-size: 35px
       &__subtitle
         font-size: 23px
+    &__laptop
+      margin-bottom: 95px
+      &__img
+        display: none
+      &__subscription
+        margin: -160px 0 0 
   .button
     &__upgrade
       margin-bottom: 40px
@@ -193,6 +210,8 @@
     &__context
       width: 465px
   .device
+    &::after
+      top: -440px
     &__support
       width: 500px
       margin: 0 auto
@@ -266,6 +285,8 @@
   .article
     &__context
       width: 350px
+      &__text-span
+        margin-bottom: 190px
   .main
     &__slogan
       width: 350px
@@ -277,11 +298,14 @@
           width: 330px  
   .device
     height: 630px
+    &::before
+      top: -190px
+    &::after
+      top: -455px
     &__laptop
+      width: 360px
       text-align: center
       margin-bottom: 30px
-      &__img
-        display: none
       &__subscription
         width: 353px
         margin-left: 0

@@ -1027,6 +1027,17 @@ ul {
           transform: skewY(-6deg);
 }
 
+.device::after {
+  content: '';
+  display: inline-block;
+  width: 1475px;
+  height: 1px;
+  background-color: #b9b9b9;
+  top: -458px;
+  right: -451px;
+  position: relative;
+}
+
 .device__laptop {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1035,7 +1046,7 @@ ul {
   width: 437px;
   position: relative;
   text-align: right;
-  margin-bottom: 235px;
+  margin-bottom: 252px;
 }
 
 .device__laptop__subscription {
@@ -1047,17 +1058,6 @@ ul {
 
 .device__laptop__subscription img {
   z-index: 1;
-}
-
-.device__laptop__subscription::after {
-  content: '';
-  display: inline-block;
-  width: 1475px;
-  height: 1px;
-  background-color: #b9b9b9;
-  bottom: -146px;
-  left: -271px;
-  position: relative;
 }
 
 .device__laptop__title {
@@ -1082,7 +1082,7 @@ ul {
 
 .device__laptop__img {
   position: absolute;
-  bottom: -160px;
+  bottom: -179px;
   left: 269px;
   z-index: 1;
 }
@@ -1470,6 +1470,10 @@ body {
     width: 1327px;
     left: -400%;
   }
+  .device::after {
+    width: 100%;
+    right: 0;
+  }
   .footer__company {
     margin-left: 150px;
   }
@@ -1504,10 +1508,6 @@ body {
   .main__subscription__additional:nth-child(2) {
     margin-bottom: 50px;
   }
-  .device__laptop__subscription::after {
-    width: 100%;
-    left: 0de;
-  }
   .nav__logo {
     margin-right: 77px;
   }
@@ -1522,7 +1522,14 @@ body {
     margin: auto;
   }
   .device__laptop__img {
-    margin-left: -130px;
+    margin-left: -145px;
+  }
+  .device__partner::before {
+    width: 100%;
+    left: 0;
+  }
+  .device__partner::after {
+    display: none;
   }
   .footer__contact {
     margin: 0 auto;
@@ -1604,11 +1611,26 @@ body {
   .article__context {
     margin: auto;
   }
+  .article__context__text-span {
+    margin-bottom: 220px;
+  }
+  .device::after {
+    top: -370px;
+  }
   .device__support__title {
     font-size: 35px;
   }
   .device__support__subtitle {
     font-size: 23px;
+  }
+  .device__laptop {
+    margin-bottom: 95px;
+  }
+  .device__laptop__img {
+    display: none;
+  }
+  .device__laptop__subscription {
+    margin: -160px 0 0;
   }
   .button__upgrade {
     margin-bottom: 40px;
@@ -1678,6 +1700,9 @@ body {
   }
   .article__context {
     width: 465px;
+  }
+  .device::after {
+    top: -440px;
   }
   .device__support {
     width: 500px;
@@ -1789,6 +1814,9 @@ body {
   .article__context {
     width: 350px;
   }
+  .article__context__text-span {
+    margin-bottom: 190px;
+  }
   .main__slogan {
     width: 350px;
   }
@@ -1801,12 +1829,16 @@ body {
   .device {
     height: 630px;
   }
+  .device::before {
+    top: -190px;
+  }
+  .device::after {
+    top: -455px;
+  }
   .device__laptop {
+    width: 360px;
     text-align: center;
     margin-bottom: 30px;
-  }
-  .device__laptop__img {
-    display: none;
   }
   .device__laptop__subscription {
     width: 353px;
