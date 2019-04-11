@@ -1506,7 +1506,7 @@ body {
   }
   .device__laptop__subscription::after {
     width: 100%;
-    left: 0;
+    left: 0de;
   }
   .nav__logo {
     margin-right: 77px;
