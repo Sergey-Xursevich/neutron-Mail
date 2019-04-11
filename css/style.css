@@ -1504,6 +1504,10 @@ body {
   .main__subscription__additional:nth-child(2) {
     margin-bottom: 50px;
   }
+  .device__laptop__subscription::after {
+    width: 100%;
+    left: 0;
+  }
   .nav__logo {
     margin-right: 77px;
   }
