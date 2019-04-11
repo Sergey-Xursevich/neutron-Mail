@@ -1472,6 +1472,15 @@ body {
     width: 1327px;
     left: -400%;
   }
+  .footer__company {
+    margin-left: 150px;
+  }
+  .footer__legal {
+    margin-left: 60px;
+  }
+  .footer__netronMail {
+    margin-left: 20px;
+  }
 }
 
 @media (max-width: 1500px) {
@@ -1511,6 +1520,21 @@ body {
   }
   .device__laptop__img {
     margin-left: -130px;
+  }
+  .footer__contact {
+    margin: 0 auto;
+  }
+  .footer__company {
+    margin-left: 150px;
+  }
+  .footer__legal {
+    margin-left: 60px;
+  }
+  .footer__netronMail {
+    margin-right: 30px;
+  }
+  .container__social {
+    margin-left: 53px;
   }
 }
 
@@ -1589,8 +1613,29 @@ body {
   .device__partner {
     width: 650px;
   }
+  .device__partner::after {
+    display: none;
+  }
   .device__partner__img-1, .device__partner__img-2, .device__partner__img-3, .device__partner__img-4, .device__partner__img-5, .device__partner__img-6, .device__partner__img-7 {
     margin: 0 5px;
+  }
+  .footer__company {
+    margin-left: 0;
+  }
+  .footer__company::before {
+    display: none;
+  }
+  .footer__company__title {
+    margin-top: 0;
+  }
+  .footer__legal {
+    margin-left: 15px;
+  }
+  .footer__netronMail {
+    margin-left: 10px;
+  }
+  .container__social {
+    margin-left: 40px;
   }
 }
 
@@ -1654,6 +1699,19 @@ body {
   }
   .device__partner__img-1, .device__partner__img-2, .device__partner__img-3, .device__partner__img-4, .device__partner__img-5, .device__partner__img-6, .device__partner__img-7 {
     margin-bottom: 20px;
+  }
+  .container__wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .container__social {
+    text-align: center;
+    margin-left: 0;
+  }
+  .footer__contact {
+    display: none;
   }
 }
 
@@ -1734,6 +1792,9 @@ body {
   .main__subscription__additional__subtitle {
     width: 330px;
   }
+  .device {
+    height: 630px;
+  }
   .device__laptop {
     text-align: center;
     margin-bottom: 30px;
@@ -1772,6 +1833,24 @@ body {
   .button__donate {
     padding: 18px 44px;
     font-size: 12px;
+  }
+  .container__social a {
+    margin-right: 8px;
+  }
+  .container__social a:not(:last-child)::after {
+    left: 5px;
+  }
+  .footer__company {
+    width: 73px;
+    margin-left: 5px;
+  }
+  .footer__legal {
+    width: 90px;
+  }
+  .footer__netronmail {
+    width: 108px;
+    margin-left: 0;
+    margin-right: 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -26,6 +26,13 @@
         &::before
           width: 1327px
           left: -400%
+  .footer
+    &__company
+      margin-left: 150px
+    &__legal
+      margin-left: 60px
+    &__netronMail
+      margin-left: 20px
         
 @media (max-width: 1500px)
   .container
@@ -59,18 +66,27 @@
     &__laptop
       &__img
         margin-left: -130px
+  .footer
+    &__contact
+      margin: 0 auto
+    &__company
+      margin-left: 150px
+    &__legal
+      margin-left: 60px
+    &__netronMail
+      margin-right: 30px
+  .container
+    &__social
+      margin-left: 53px
     
 @media (max-width: 992px)
   .container
     width: 768px
-
   .title
-    text-align: center
-    
+    text-align: center    
   .menu
     &__icon
-      display: inline-block
-      
+      display: inline-block      
   .menu
     &__links
       position: fixed
@@ -125,10 +141,25 @@
   .device
     &__partner
       width: 650px
+      &::after
+        display: none
       &__img-1, &__img-2, &__img-3, &__img-4, &__img-5, &__img-6, &__img-7
         margin: 0 5px
+  .footer
+    &__company
+      margin-left: 0
+      &::before
+        display: none
+      &__title
+        margin-top: 0
+    &__legal
+      margin-left: 15px
+    &__netronMail
+      margin-left: 10px
+  .container
+    &__social
+      margin-left: 40px
         
-
 @media (max-width: 768px)
   .container
     width: 576px
@@ -173,6 +204,16 @@
         justify-content: center
       &__img-1, &__img-2, &__img-3, &__img-4, &__img-5, &__img-6, &__img-7
         margin-bottom: 20px
+  .container
+    &__wrapper
+      flex-wrap: wrap
+      justify-content: space-around
+    &__social
+      text-align: center
+      margin-left: 0
+  .footer
+    &__contact
+      display: none
   
 
 @media (max-width: 576px)
@@ -230,6 +271,7 @@
         &__subtitle
           width: 330px  
   .device
+    height: 630px
     &__laptop
       text-align: center
       margin-bottom: 30px
@@ -251,7 +293,6 @@
         margin-bottom: 40px
     &__partner
       width: 360px
-
   .button
     &__upgrade
       padding: 18px 20px
@@ -260,4 +301,19 @@
     &__donate
       padding: 18px 44px
       font-size: 12px
+  .container
+    &__social a
+      margin-right: 8px
+      &:not(:last-child)::after
+        left: 5px
+  .footer
+    &__company
+      width: 73px
+      margin-left: 5px
+    &__legal
+      width: 90px
+    &__netronmail
+      width: 108px
+      margin-left: 0
+      margin-right: 10px
 
