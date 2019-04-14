@@ -143,6 +143,7 @@
       &__text-span
         margin-bottom: 220px
   .device
+    height: 585px
     &::after
       top: -370px
     &__support
@@ -241,6 +242,8 @@
 @media (max-width: 576px)
   .container
     width: 360px
+    &__wrapper
+      margin-bottom: 20px
   .nav
     padding: 25px 25px 25px 
     &__wrapper
@@ -253,6 +256,8 @@
     &__language
       &__link
         justify-content: center
+    &__link:not(:first-child)
+      margin: 0 
   header
     height: 575px
   .title
@@ -281,7 +286,7 @@
   .menu
     &__links
       &-item
-        padding: 10px 7px
+        padding: 10px 5px
   .article
     &__context
       width: 350px
@@ -297,7 +302,7 @@
         &__subtitle
           width: 330px  
   .device
-    height: 630px
+    height: 550px
     &::before
       top: -190px
     &::after
@@ -341,7 +346,7 @@
       margin-left: 5px
     &__legal
       width: 90px
-    &__netronmail
+    &__netronMail
       width: 108px
       margin-left: 0
       margin-right: 10px

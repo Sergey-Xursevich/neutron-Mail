@@ -14,11 +14,12 @@ footer
         & a
             color: #5c5c5c
             margin-right: 21px
-            &:not(:last-child)::after
-                content: '/'
-                display: inline-block
-                position: relative
-                left: 11px
+            &:not(:last-of-type)
+                &::after
+                    content: '/'
+                    display: inline-block
+                    position: relative
+                    left: 11px
             &:hover
                 cursor: pointer
                 color: #5B4295

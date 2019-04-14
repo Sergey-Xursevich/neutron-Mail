@@ -1304,7 +1304,7 @@ footer {
   margin-right: 21px;
 }
 
-.container__social a:not(:last-child)::after {
+.container__social a:not(:last-of-type)::after {
   content: '/';
   display: inline-block;
   position: relative;
@@ -1614,6 +1614,9 @@ body {
   .article__context__text-span {
     margin-bottom: 220px;
   }
+  .device {
+    height: 585px;
+  }
   .device::after {
     top: -370px;
   }
@@ -1747,6 +1750,9 @@ body {
   .container {
     width: 360px;
   }
+  .container__wrapper {
+    margin-bottom: 20px;
+  }
   .nav {
     padding: 25px 25px 25px;
   }
@@ -1767,6 +1773,9 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .nav__link:not(:first-child) {
+    margin: 0;
   }
   header {
     height: 575px;
@@ -1809,7 +1818,7 @@ body {
     width: 360px;
   }
   .menu__links-item {
-    padding: 10px 7px;
+    padding: 10px 5px;
   }
   .article__context {
     width: 350px;
@@ -1827,7 +1836,7 @@ body {
     width: 330px;
   }
   .device {
-    height: 630px;
+    height: 550px;
   }
   .device::before {
     top: -190px;
@@ -1885,7 +1894,7 @@ body {
   .footer__legal {
     width: 90px;
   }
-  .footer__netronmail {
+  .footer__netronMail {
     width: 108px;
     margin-left: 0;
     margin-right: 10px;
