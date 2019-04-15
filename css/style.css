@@ -1486,6 +1486,9 @@ body {
 }
 
 @media (max-width: 1500px) {
+  header {
+    background-image: url("../img/background__responsible.jpg");
+  }
   .container {
     width: 992px;
   }
