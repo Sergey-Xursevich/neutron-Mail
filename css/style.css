@@ -718,6 +718,7 @@ header {
   width: 28px;
   height: 10px;
   position: relative;
+  left: 250px;
   cursor: pointer;
 }
 
@@ -729,7 +730,6 @@ header {
   background-color: #858688;
   border-radius: 12px;
   opacity: 1;
-  left: 250px;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
