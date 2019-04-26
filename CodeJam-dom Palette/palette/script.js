@@ -1,115 +1,65 @@
 window.onload = function () {
-  let transFlag = false;
 
-  let colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
+    let canvas = document.querySelector(".canvas__wrapper");
+    let selectedTd;
+    let key = null;
 
-  const colorPrev = getComputedStyle(document.querySelector('.tools__list__color-2')).backgroundColor;
+    canvas.addEventListener('click', (event) => {
+        let target = event.target;
 
-  const picker = document.getElementById('Picker');
-  const bucket = document.getElementById('Bucket');
-  const canva = document.querySelector('.canvas__wrapper');
-  const transform = document.getElementById('Transform');
-  const move = document.getElementById('Move');
-
-  picker.addEventListener('click', () => {
-    document.body.style.cssText = 'cursor: help';
-    pallete__colors.style.opacity = 1;
-  });
-
-  bucket.addEventListener('click', () => {
-    document.body.style.cssText = 'cursor: crosshair';
-    pallete__colors.style.display = 'block'; 
-  });
-
-  transform.addEventListener('click', () => {
-    transFlag = true;
-    document.body.style.cssText = 'cursor: pointer'
-  });
-
-  move.addEventListener('click', () => {
-    document.body.style.cssText = 'cursor: move';
-    moveFlag = true;
-  });
-
-
-  canva.addEventListener('click', (event) => {
-    let target = event.target;    
-
-    while (target != this) {
-      if (target.tagName == 'DIV') {
-       
-        target.ondragstart = function() {
-          return false;
-        };
-        
-        function getCoords(elem) {   // кроме IE8-
-          var box = elem.getBoundingClientRect();
-          return {
-            top: box.top + pageYOffset,
-            left: box.left + pageXOffset
-          };
+        while(target != canvas) {
+            if(target.tagName == "DIV") {
+                switch (key) {
+                    case 'transform':
+                        transformElement(target);
+                        break;
+                }
+            }
+            target = target.parentNode;
         }
-
-        if (transFlag) {
-          changeShape(target);
-          transFlag = false;
-          return;
-        }
-        highlight(target);
-        return;
-      }
-      target = target.parentNode;
-    }
-  });
-
-
-  function highlight(node) {
-    node.style.backgroundColor = colorCurrent;
-  }
-
-  function changeShape(node) {
-    node.style.borderRadius = '50%';
-  }
-
-
-
-  function Colors(elem) {
-    this.red = function (target) {
-      changeColor(target);
-    };
-
-    this.blue = function (target) {
-      changeColor(target);
-    };
-
-    this.grey = function (target) {
-      changeColor(target);
-    };
-
-    this.green = function (target) {
-      changeColor(target);
-    };
-
-    const self = this;
-
-    elem.addEventListener('click', (e) => {
-      const target = e.target;
-      const action = target.getAttribute('data-action');
-      if (action) {
-        self[action](target);
-      }
     });
-  }
-  
-  function changeColor(elem) {
-    const tmp = colorCurrent;
 
-    if(colorCurrent === getComputedStyle(elem).backgroundColor) return;
 
-    document.querySelector('.tools__list__color-1').style.backgroundColor = getComputedStyle(elem).backgroundColor;
-    colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
-    document.querySelector('.tools__list__color-2').style.backgroundColor = tmp;
-  }
+    function transformElement(node) {
+      alert("Click");
+    }
 
-  new Colors(pallete__colors);
+    function Tools(elem) {
+        this.bucket = function () {
+            alert('bucket');
+        };
+        this.picker = function () {
+            alert('picker');
+        };
+        this.move = function () {
+            alert('move');
+        };
+        this.transform = function () {
+            document.body.style.cssText = 'cursor: pointer';
+            key = 'transform';
+        };
+
+        var self = this;
+
+        elem.onclick = function (event) {
+            var target = event.target;
+            var action = target.getAttribute('data-action');
+            if (action) {
+                self[action]();
+            }
+        };
+    }
+
+    new Tools(tools__list);
+
+
+    function transformElement(node) {
+        console.log(node.style.borderRadius);
+        
+        if(!node.style.borderRadius || node.style.borderRadius == "0%") {
+            node.style.borderRadius = "50%";
+        } else {
+            node.style.borderRadius = "0%";
+        }
+    }
 };

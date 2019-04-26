@@ -9,6 +9,7 @@
   <title>Pallete</title>
 </head>
 <body>
+
   <header>
     <span>CodeJam Palette</span> 
     <div class="menu-icon">
@@ -22,23 +23,25 @@
         <span class="line line__square"></span>
       </div>
   </header>
+
   <div class="container">
     <div class="pallete__panel">
-      <div class="pallete__tools">
+
+      <div class="pallete__tools" id="tools__list">        
         <div class="tools__list">
-          <div class="tools__list__image tools__list__image-1" id="Bucket"></div>
+          <div class="tools__list__image tools__list__image-1" data-action="bucket"></div>
           Paint bucket
         </div>
         <div class="tools__list">
-          <div class="tools__list__image tools__list__image-2" id="Picker"></div>
+          <div class="tools__list__image tools__list__image-2" data-action="picker"></div>
           Choose color
         </div>
         <div class="tools__list">
-          <div class="tools__list__image tools__list__image-3" id="Move"></div>
+          <div class="tools__list__image tools__list__image-3" data-action="move"></div>
           Move
         </div>
         <div class="tools__list">
-          <div class="tools__list__image tools__list__image-4" id="Transform"></div>
+          <div class="tools__list__image tools__list__image-4" data-action="transform"></div>
           Transform
         </div>
       </div>
@@ -87,7 +90,7 @@
       </div>
     </div>
     <div class="pallete__canvas">
-      <div class="canvas__wrapper">
+      <div class="canvas__wrapper" id="canvas">
         <div class="item" data-action="item-1"></div>
         <div class="item" data-action="item-2"></div>
         <div class="item" data-action="item-3"></div>
@@ -100,6 +103,7 @@
       </div>
     </div>
   </div>
+
   <script src="/CodeJam-dom Palette/palette/script.js"></script>
 </body>
 </html>

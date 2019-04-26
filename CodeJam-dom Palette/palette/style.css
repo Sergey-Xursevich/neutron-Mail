@@ -102,7 +102,6 @@ header {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  border: 1px solid;
 }
 
 .tools__list {
@@ -151,7 +150,7 @@ header {
 }
 
 .tools__list__image-4 {
-  background: url("img/move (1).png");
+  background: url("img/repeat.png");
   background-size: 24px 24px;
 }
 
