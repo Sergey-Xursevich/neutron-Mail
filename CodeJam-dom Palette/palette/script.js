@@ -1,8 +1,9 @@
 window.onload = function () {
 
     let canvas = document.querySelector(".canvas__wrapper");
-    let selectedTd;
+    let picker = document.querySelector(".pallete__colors");
     let key = null;
+    let colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
 
     canvas.addEventListener('click', (event) => {
         let target = event.target;
@@ -13,11 +14,27 @@ window.onload = function () {
                     case 'transform':
                         transformElement(target);
                         break;
+                    case 'picker':
+                        changeColor(target);
+                        break;
                 }
             }
             target = target.parentNode;
         }
     });
+
+    picker.addEventListener('click', (event) => {
+        let target = event.target;
+
+        while(target != picker) {
+            if(target.tagName == "DIV") {
+                changeColor(target);
+                return;
+            }
+            target = target.parentNode;
+        }
+    });
+
 
 
     function transformElement(node) {
@@ -29,7 +46,9 @@ window.onload = function () {
             alert('bucket');
         };
         this.picker = function () {
-            alert('picker');
+            document.body.style.cssText = 'cursor: help';
+            key = 'picker';
+            picker.style.display = "block";
         };
         this.move = function () {
             alert('move');
@@ -37,6 +56,7 @@ window.onload = function () {
         this.transform = function () {
             document.body.style.cssText = 'cursor: pointer';
             key = 'transform';
+            picker.style.display = "none";
         };
 
         var self = this;
@@ -61,5 +81,17 @@ window.onload = function () {
         } else {
             node.style.borderRadius = "0%";
         }
+    }
+
+    function changeColor(node) {
+        const tmp = colorCurrent;
+        if(colorCurrent === getComputedStyle(node).backgroundColor) return;
+        
+        console.log(node.firstElementChild);
+        
+
+        document.querySelector('.tools__list__color-1').style.backgroundColor = getComputedStyle(node).backgroundColor;
+        colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
+        document.querySelector('.tools__list__color-2').style.backgroundColor = tmp;
     }
 };
