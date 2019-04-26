@@ -38,7 +38,7 @@ body {
 }
 
 .pallete__colors {
-  height: 246px;
+  height: 295x;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
@@ -134,6 +134,14 @@ body {
 
 .tools__list__color-4 {
   background-color: #77DDE7;
+}
+
+.tools__list__color-5 {
+  background-color: #8B8C7A;
+}
+
+.tools__list__color-6 {
+  background-color: #99FF99;
 }
 
 .item {
