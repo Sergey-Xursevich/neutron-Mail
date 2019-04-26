@@ -1,41 +1,56 @@
-window.onload = function() {
+window.onload = function () {
+  let transFlag = false;
 
-  let flag = false, transFlag = false,
-      colorCurrent = getComputedStyle(document.querySelector(".tools__list__color-1")).backgroundColor,
-      colorPrev = getComputedStyle(document.querySelector(".tools__list__color-2")).backgroundColor;
+  let colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
 
-  let colour = {
-    "current" : colorCurrent,
-    "prev" : colorPrev
-  }
-  
-  let picker = document.getElementById("Picker");
-  let bucket = document.getElementById("Bucket");
-  let canva = document.querySelector(".canvas__wrapper");
-  let transform = document.getElementById("Transform");
+  const colorPrev = getComputedStyle(document.querySelector('.tools__list__color-2')).backgroundColor;
+
+  const picker = document.getElementById('Picker');
+  const bucket = document.getElementById('Bucket');
+  const canva = document.querySelector('.canvas__wrapper');
+  const transform = document.getElementById('Transform');
+  const move = document.getElementById('Move');
 
   picker.addEventListener('click', () => {
-    document.body.style.cssText = "cursor: help";
-    pallete__colors.style.display = "block"; 
+    document.body.style.cssText = 'cursor: help';
+    pallete__colors.style.opacity = 1;
   });
 
   bucket.addEventListener('click', () => {
-    document.body.style.cssText = "cursor: crosshair";
+    document.body.style.cssText = 'cursor: crosshair';
+    pallete__colors.style.display = 'block'; 
   });
 
   transform.addEventListener('click', () => {
     transFlag = true;
-    document.body.style.cssText = "cursor: pointer";
+    document.body.style.cssText = 'cursor: pointer'
   });
 
+  move.addEventListener('click', () => {
+    document.body.style.cssText = 'cursor: move';
+    moveFlag = true;
+  });
+
+
   canva.addEventListener('click', (event) => {
-    let target = event.target;
-    console.log(target);
-    console.log(target.tagName);
-      
+    let target = event.target;    
+
     while (target != this) {
       if (target.tagName == 'DIV') {
-        if(transFlag) {
+       
+        target.ondragstart = function() {
+          return false;
+        };
+        
+        function getCoords(elem) {   // кроме IE8-
+          var box = elem.getBoundingClientRect();
+          return {
+            top: box.top + pageYOffset,
+            left: box.left + pageXOffset
+          };
+        }
+
+        if (transFlag) {
           changeShape(target);
           transFlag = false;
           return;
@@ -45,7 +60,7 @@ window.onload = function() {
       }
       target = target.parentNode;
     }
-  })
+  });
 
 
   function highlight(node) {
@@ -53,47 +68,48 @@ window.onload = function() {
   }
 
   function changeShape(node) {
-    node.style.borderRadius = "50%";
+    node.style.borderRadius = '50%';
   }
 
+
+
   function Colors(elem) {
-    this.red = function(target) {      
-      changeColor(target);       
+    this.red = function (target) {
+      changeColor(target);
     };
 
-    this.blue = function(target) {      
-      changeColor(target);         
+    this.blue = function (target) {
+      changeColor(target);
     };
 
-    this.grey = function(target) {      
-      changeColor(target);   
+    this.grey = function (target) {
+      changeColor(target);
     };
 
-    this.green = function(target) {      
-      changeColor(target);            
-    }
+    this.green = function (target) {
+      changeColor(target);
+    };
 
-    let self = this;
+    const self = this;
 
     elem.addEventListener('click', (e) => {
-      let target = e.target;  
-      let action = target.getAttribute('data-action');
-      if(action) {
+      const target = e.target;
+      const action = target.getAttribute('data-action');
+      if (action) {
         self[action](target);
       }
     });
   }
+  
+  function changeColor(elem) {
+    const tmp = colorCurrent;
+
+    if(colorCurrent === getComputedStyle(elem).backgroundColor) return;
+
+    document.querySelector('.tools__list__color-1').style.backgroundColor = getComputedStyle(elem).backgroundColor;
+    colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
+    document.querySelector('.tools__list__color-2').style.backgroundColor = tmp;
+  }
 
   new Colors(pallete__colors);
-
-  function changeColor(elem) {
-    let tmp = colorCurrent;   
-       
-    document.querySelector(".tools__list__color-1").style.backgroundColor = getComputedStyle(elem).backgroundColor;
-    colorCurrent = getComputedStyle(document.querySelector(".tools__list__color-1")).backgroundColor;
-    document.querySelector(".tools__list__color-2").style.backgroundColor = tmp; 
-  }
-  
-}
-
-
+};

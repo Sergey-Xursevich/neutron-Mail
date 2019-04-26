@@ -41,7 +41,7 @@ body {
   height: 295x;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  display: none;
+  opacity: 0.5;
 }
 
 .pallete__canvas {
@@ -52,10 +52,11 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  border: 1px solid;
 }
 
 .canvas__wrapper {
-  width: 744px;
+  width: 746px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,6 +65,7 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  border: 1px solid;
 }
 
 .tools__list {
