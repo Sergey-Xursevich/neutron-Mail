@@ -207,4 +207,12 @@ header {
   background-color: #8B8C7A;
   margin: 2.5px 5px 2.5px;
 }
+
+.item-move {
+  position: absolute;
+  height: 238px;
+  width: 238px;
+  background-color: #8B8C7A;
+  margin: 2.5px 5px 2.5px;
+}
 /*# sourceMappingURL=style.css.map */
