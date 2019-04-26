@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +8,12 @@
   <link rel="shortcut icon" href="/CodeJam-dom Palette/palette/img/tools.png" type="image/x-icon">
   <title>Pallete</title>
 </head>
-
 <body>
-
   <div class="container">
     <div class="pallete__panel">
       <div class="pallete__tools">
         <div class="tools__list">
-          <div class="tools__list__image tools__list__image-1"></div>
+          <div class="tools__list__image tools__list__image-1" id="Bucket"></div>
           Paint bucket
         </div>
         <div class="tools__list">
@@ -33,9 +30,7 @@
         </div>
       </div>
 
-
       <div class="pallete__colors" id="pallete__colors">
-
         <div class="tools__list">
           <div class="tools__list__image tools__list__color tools__list__color-1" data-action="current"></div>
           Current color
@@ -61,27 +56,22 @@
           light green
         </div>
       </div>
-
-
     </div>
 
     <div class="pallete__canvas">
       <div class="canvas__wrapper">
-        <div class="item item-1"></div>
-        <div class="item item-2"></div>
-        <div class="item item-3"></div>
-        <div class="item item-4"></div>
-        <div class="item item-5"></div>
-        <div class="item item-6"></div>
-        <div class="item item-7"></div>
-        <div class="item item-8"></div>
-        <div class="item item-9"></div>
+        <div class="item" data-action="item-1"></div>
+        <div class="item" data-action="item-2"></div>
+        <div class="item" data-action="item-3"></div>
+        <div class="item" data-action="item-4"></div>
+        <div class="item" data-action="item-5"></div>
+        <div class="item" data-action="item-6"></div>
+        <div class="item" data-action="item-7"></div>
+        <div class="item" data-action="item-8"></div>
+        <div class="item" data-action="item-9"></div>
       </div>
     </div>
-
   </div>
-
   <script src="/CodeJam-dom Palette/palette/script.js"></script>
 </body>
-
 </html>

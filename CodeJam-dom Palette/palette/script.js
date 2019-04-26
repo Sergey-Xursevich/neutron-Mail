@@ -9,16 +9,40 @@ window.onload = function() {
     "prev" : colorPrev
   }
   
-  let transform = document.querySelector("#Transform");
-  let div = document.getElementsByClassName("item");
   let picker = document.getElementById("Picker");
-  let colors = document.querySelector(".pallete__colors");  
+  let bucket = document.getElementById("Bucket");
+  let canva = document.querySelector(".canvas__wrapper");
 
   picker.addEventListener('click', () => {
-    console.log("click");
-    document.body.style.cssText = "cursor: help"
-    flag = true;    
+    document.body.style.cssText = "cursor: help";
+    pallete__colors.style.display = "block"; 
   })
+
+  bucket.addEventListener('click', () => {
+    document.body.style.cssText = "cursor: crosshair";
+  })
+
+  canva.addEventListener('click', (event) => {
+    let target = event.target;
+    console.log(target);
+    console.log(target.tagName);
+    
+    
+    
+    while (target != this) {
+      if (target.tagName == 'DIV') {
+        highlight(target);
+        return;
+      }
+      target = target.parentNode;
+    }
+  })
+
+
+  function highlight(node) {
+    node.style.backgroundColor = colorCurrent;
+    
+  }
 
   function Colors(elem) {
     this.red = function(target) {      
