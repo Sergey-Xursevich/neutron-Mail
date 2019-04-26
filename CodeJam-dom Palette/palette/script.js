@@ -17,6 +17,9 @@ window.onload = function () {
                     case 'picker':
                         changeColor(target);
                         break;
+                    case 'bucket':
+                        paintShape(target);
+                        break;
                 }
             }
             target = target.parentNode;
@@ -43,7 +46,9 @@ window.onload = function () {
 
     function Tools(elem) {
         this.bucket = function () {
-            alert('bucket');
+            document.body.style.cssText = 'cursor: crosshair';
+            key = 'bucket';
+            picker.style.display = "none";
         };
         this.picker = function () {
             document.body.style.cssText = 'cursor: help';
@@ -93,5 +98,9 @@ window.onload = function () {
         document.querySelector('.tools__list__color-1').style.backgroundColor = getComputedStyle(node).backgroundColor;
         colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
         document.querySelector('.tools__list__color-2').style.backgroundColor = tmp;
+    }
+
+    function paintShape(node) {
+        node.style.backgroundColor = colorCurrent;
     }
 };
