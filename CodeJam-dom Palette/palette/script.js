@@ -13,7 +13,6 @@ window.onload = function () {
         for (key in desObj) {
             if(desObj[key].indexOf('style=') != -1) {
                 let css = desObj[key].slice(desObj[key].indexOf('style=') + 7, -9); 
-                console.log(typeof css); 
                 divCanvas[key].style.cssText = css;
                 if(css.indexOf('top') != -1) {
                     divCanvas[key].style.position = 'absolute';
@@ -57,6 +56,25 @@ window.onload = function () {
             target = target.parentNode;
         }
     });
+
+    document.addEventListener('keydown', (e) => {
+        if( e.which === 65 && e.altKey ){
+            let tmp = new Tools(tools__list);
+            tmp.picker();
+         } else if( e.which === 90 && e.altKey ){
+            let tmp = new Tools(tools__list);
+            tmp.transform();
+         } else if( e.which === 88 && e.altKey ){
+            let tmp = new Tools(tools__list);
+            tmp.move();
+         } else if( e.which === 83 && e.altKey ){
+            let tmp = new Tools(tools__list);
+            tmp.storage();
+         } else if( e.which === 81 && e.altKey ){
+            let tmp = new Tools(tools__list);
+            tmp.bucket();
+         }
+    });        
 
     function Tools(elem) {
         this.bucket = function () {
