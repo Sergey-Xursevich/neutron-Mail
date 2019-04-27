@@ -65,8 +65,8 @@ header {
 }
 
 .pallete__tools {
-  height: 200px;
-  margin-bottom: 50px;
+  height: 245px;
+  margin-bottom: 24px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   background-color: rgba(202, 196, 176, 0.2);
@@ -90,7 +90,9 @@ header {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  border: 1px solid;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
 }
 
 .canvas__wrapper {
@@ -114,7 +116,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   width: 185px;
-  height: 48px;
+  height: 46px;
   margin-left: 20px;
 }
 
@@ -123,7 +125,7 @@ header {
   display: block;
   width: 90%;
   height: 1px;
-  top: 98px;
+  top: 92px;
   position: absolute;
   background-color: rgba(100, 115, 151, 0.3);
 }
@@ -152,6 +154,11 @@ header {
 
 .tools__list__image-4 {
   background: url("img/repeat.png");
+  background-size: 24px 24px;
+}
+
+.tools__list__image-5 {
+  background: url("img/cloud.png");
   background-size: 24px 24px;
 }
 
@@ -203,7 +210,6 @@ header {
 .item {
   height: 238px;
   width: 238px;
-  position: relative;
   background-color: #8B8C7A;
   margin: 2.5px 5px 2.5px;
 }

@@ -1,10 +1,26 @@
 window.onload = function () {
 
+    let divCanvas = document.getElementsByClassName("item");
     let canvas = document.querySelector(".canvas__wrapper");
     let picker = document.querySelector(".pallete__colors");
     let key = null;
     let colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
     let e = null;
+    
+    if (localStorage.getItem('myKey') !== null) {
+        let desObj = JSON.parse(localStorage.getItem('myKey'));
+        console.log(desObj);
+        for (key in desObj) {
+            if(desObj[key].indexOf('style=') != -1) {
+                let css = desObj[key].slice(desObj[key].indexOf('style=') + 7, -9); 
+                console.log(typeof css); 
+                divCanvas[key].style.cssText = css;
+                if(css.indexOf('top') != -1) {
+                    divCanvas[key].style.position = 'absolute';
+                }
+            }
+        }
+    }
 
     canvas.addEventListener('click', (event) => {
         let target = event.target;
@@ -58,12 +74,21 @@ window.onload = function () {
             key = 'move';
             picker.style.display = "none";
             e = elem;
+            checkMove = true;
         };
         this.transform = function () {
             document.body.style.cssText = 'cursor: pointer';
             key = 'transform';
             picker.style.display = "none";
         };
+        this.storage = function () {
+            let res = confirm("Вы желаете сохранить результат?");
+            if (res) {
+                localStorage.setItem("myKey", addStyleObject());
+            } else {
+                localStorage.clear();
+            }
+        }
 
         var self = this;
 
@@ -105,8 +130,24 @@ window.onload = function () {
         node.style.backgroundColor = colorCurrent;
     }
 
+    function addStyleObject() {
+        let obj = {};
+
+        divCanvas = document.getElementsByClassName("item");
+        let divCanvasMove = document.getElementsByClassName("item-move");
+
+        for (let i = 0; i < divCanvas.length; i++) {
+            if (divCanvas[i].classList.contains("item-move")) {
+                obj[i] = divCanvasMove[i].outerHTML;
+            }
+            obj[i] = divCanvas[i].outerHTML;
+        }
+        let seralObj = JSON.stringify(obj);
+        return seralObj;
+    }
+
     function moveShape(node) {
-        node.className = "item-move";
+        node.className = "item item-move";
         moveAt(event);
         node.style.zIndex = 1000;
 
