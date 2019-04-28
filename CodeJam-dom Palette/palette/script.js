@@ -6,15 +6,15 @@ window.onload = function () {
     let key = null;
     let colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
     let e = null;
-    
+
     if (localStorage.getItem('myKey') !== null) {
         let desObj = JSON.parse(localStorage.getItem('myKey'));
         console.log(desObj);
         for (key in desObj) {
-            if(desObj[key].indexOf('style=') != -1) {
-                let css = desObj[key].slice(desObj[key].indexOf('style=') + 7, -9); 
+            if (desObj[key].indexOf('style=') != -1) {
+                let css = desObj[key].slice(desObj[key].indexOf('style=') + 7, -9);
                 divCanvas[key].style.cssText = css;
-                if(css.indexOf('top') != -1) {
+                if (css.indexOf('top') != -1) {
                     divCanvas[key].style.position = 'absolute';
                 }
             }
@@ -58,23 +58,23 @@ window.onload = function () {
     });
 
     document.addEventListener('keydown', (e) => {
-        if( e.which === 65 && e.altKey ){
+        if (e.which === 65 && e.altKey) {
             let tmp = new Tools(tools__list);
             tmp.picker();
-         } else if( e.which === 90 && e.altKey ){
+        } else if (e.which === 90 && e.altKey) {
             let tmp = new Tools(tools__list);
             tmp.transform();
-         } else if( e.which === 88 && e.altKey ){
+        } else if (e.which === 88 && e.altKey) {
             let tmp = new Tools(tools__list);
             tmp.move();
-         } else if( e.which === 83 && e.altKey ){
+        } else if (e.which === 83 && e.altKey) {
             let tmp = new Tools(tools__list);
             tmp.storage();
-         } else if( e.which === 81 && e.altKey ){
+        } else if (e.which === 81 && e.altKey) {
             let tmp = new Tools(tools__list);
             tmp.bucket();
-         }
-    });        
+        }
+    });
 
     function Tools(elem) {
         this.bucket = function () {
@@ -167,6 +167,11 @@ window.onload = function () {
     function moveShape(node) {
         node.className = "item item-move";
         moveAt(event);
+
+        canvas.insertBefore(node, node);
+        console.log(node);
+
+
         node.style.zIndex = 1000;
 
         function moveAt(e) {
@@ -174,19 +179,13 @@ window.onload = function () {
             node.style.top = e.pageY - node.offsetHeight / 2 + 'px';
         }
 
+        canvas.onmousemove = function (e) {
+            moveAt(e);
+        }
 
-        canvas.addEventListener('mousemove', moveAt(e));
-        canvas.addEventListener('mouseup', () => {
-            canvas.removeEventListener('mousemove', moveAt(e));
-        });
-
-        // canvas.onmousemove = function (e) {
-        //     moveAt(e);
-        // }
-
-        // canvas.onmouseup = function () {
-        //     canvas.onmousemove = null;
-        //     node.onmouseup = null;
-        // }
+        node.onmouseup = function () {
+            canvas.onmousemove = null;
+            node.onmouseup = null;
+        }
     }
 };
