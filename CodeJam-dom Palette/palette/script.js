@@ -78,24 +78,25 @@ window.onload = function () {
 
     function Tools(elem) {
         this.bucket = function () {
-            document.body.style.cssText = 'cursor: crosshair';
+            document.querySelector(".pallete__canvas").style.cssText = "cursor: crosshair";
             key = 'bucket';
             picker.style.display = "none";
         };
         this.picker = function () {
-            document.body.style.cssText = 'cursor: help';
+            document.querySelector(".pallete__canvas").style.cssText = 'cursor: copy';
+            document.querySelector(".pallete__colors").style.cssText = 'cursor: copy';
             key = 'picker';
             picker.style.display = "block";
         };
         this.move = function () {
-            document.body.style.cssText = 'cursor: move';
+            document.querySelector(".pallete__canvas").style.cssText = 'cursor: move';
             key = 'move';
             picker.style.display = "none";
             e = elem;
             checkMove = true;
         };
         this.transform = function () {
-            document.body.style.cssText = 'cursor: pointer';
+            document.querySelector(".pallete__canvas").style.cssText = 'cursor: nesw-resize';
             key = 'transform';
             picker.style.display = "none";
         };
@@ -120,7 +121,6 @@ window.onload = function () {
     }
 
     new Tools(tools__list);
-
 
     function transformElement(node) {
         console.log(node.style.borderRadius);
