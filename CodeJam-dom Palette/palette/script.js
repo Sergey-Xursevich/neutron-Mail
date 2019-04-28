@@ -10,10 +10,10 @@ window.onload = function () {
     const desObj = JSON.parse(localStorage.getItem('myKey'));
     console.log(desObj);
     for (key in desObj) {
-      if (desObj[key].indexOf('style=') != -1) {
+      if (desObj[key].indexOf('style=') !== -1) {
         const css = desObj[key].slice(desObj[key].indexOf('style=') + 7, -9);
         divCanvas[key].style.cssText = css;
-        if (css.indexOf('top') != -1) {
+        if (css.indexOf('top') !== -1) {
           divCanvas[key].style.position = 'absolute';
         }
       }
@@ -23,8 +23,8 @@ window.onload = function () {
   canvas.addEventListener('click', (event) => {
     let target = event.target;
 
-    while (target != canvas) {
-      if (target.tagName == 'DIV') {
+    while (target !== canvas) {
+      if (target.tagName === 'DIV') {
         switch (key) {
           case 'transform':
             transformElement(target);
@@ -47,8 +47,8 @@ window.onload = function () {
   picker.addEventListener('click', (event) => {
     let target = event.target;
 
-    while (target != picker) {
-      if (target.tagName == 'DIV') {
+    while (target !== picker) {
+      if (target.tagName === 'DIV') {
         changeColor(target);
         return;
       }
@@ -124,7 +124,7 @@ window.onload = function () {
   function transformElement(node) {
     console.log(node.style.borderRadius);
 
-    if (!node.style.borderRadius || node.style.borderRadius == '0%') {
+    if (!node.style.borderRadius || node.style.borderRadius === '0%') {
       node.style.borderRadius = '50%';
     } else {
       node.style.borderRadius = '0%';
@@ -153,7 +153,7 @@ window.onload = function () {
     divCanvas = document.getElementsByClassName('item');
     const divCanvasMove = document.getElementsByClassName('item-move');
 
-    for (let i = 0; i < divCanvas.length; i++) {
+    for (let i = 0; i < divCanvas.length; i+=1) {
       obj[i] = divCanvas[i].outerHTML;
     }
     const seralObj = JSON.stringify(obj);
