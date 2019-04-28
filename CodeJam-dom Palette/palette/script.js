@@ -8,7 +8,6 @@ window.onload = function () {
 
   if (localStorage.getItem('myKey') !== null) {
     const desObj = JSON.parse(localStorage.getItem('myKey'));
-    console.log(desObj);
     for (key in desObj) {
       if (desObj[key].indexOf('style=') !== -1) {
         const css = desObj[key].slice(desObj[key].indexOf('style=') + 7, -9);
@@ -18,6 +17,55 @@ window.onload = function () {
         }
       }
     }
+  }
+
+  function changeColor(node) {
+    const tmp = colorCurrent;
+    if (colorCurrent === getComputedStyle(node).backgroundColor) return;
+
+    document.querySelector('.tools__list__color-1').style.backgroundColor = getComputedStyle(node).backgroundColor;
+    colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
+    document.querySelector('.tools__list__color-2').style.backgroundColor = tmp;
+  }
+
+  function paintShape(node) {
+    node.style.backgroundColor = colorCurrent;
+  }
+
+  function addStyleObject() {
+    const obj = {};
+
+    divCanvas = document.getElementsByClassName('item');
+    const divCanvasMove = document.getElementsByClassName('item-move');
+
+    for (let i = 0; i < divCanvas.length; i+=1) {
+      obj[i] = divCanvas[i].outerHTML;
+    }
+    const seralObj = JSON.stringify(obj);
+    return seralObj;
+  }
+
+  function moveShape(node) {
+    node.className = 'item item-move';
+    moveAt(event);
+
+    canvas.insertBefore(node, node);
+
+    node.style.zIndex = 1000;
+
+    function moveAt(e) {
+      node.style.left = `${e.pageX - node.offsetWidth / 2}px`;
+      node.style.top = `${e.pageY - node.offsetHeight / 2}px`;
+    }
+
+    canvas.onmousemove = function (e) {
+      moveAt(e);
+    };
+
+    node.onmouseup = function () {
+      canvas.onmousemove = null;
+      node.onmouseup = null;
+    };
   }
 
   canvas.addEventListener('click', (event) => {
@@ -53,25 +101,6 @@ window.onload = function () {
         return;
       }
       target = target.parentNode;
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.which === 65 && e.altKey) {
-      const tmp = new Tools(tools__list);
-      tmp.picker();
-    } else if (e.which === 90 && e.altKey) {
-      const tmp = new Tools(tools__list);
-      tmp.transform();
-    } else if (e.which === 88 && e.altKey) {
-      const tmp = new Tools(tools__list);
-      tmp.move();
-    } else if (e.which === 83 && e.altKey) {
-      const tmp = new Tools(tools__list);
-      tmp.storage();
-    } else if (e.which === 81 && e.altKey) {
-      const tmp = new Tools(tools__list);
-      tmp.bucket();
     }
   });
 
@@ -121,9 +150,26 @@ window.onload = function () {
 
   new Tools(tools__list);
 
-  function transformElement(node) {
-    console.log(node.style.borderRadius);
+  document.addEventListener('keydown', (e) => {
+    if (e.which === 65 && e.altKey) {
+      const tmp = new Tools();
+      tmp.picker();
+    } else if (e.which === 90 && e.altKey) {
+      const tmp = new Tools();
+      tmp.transform();
+    } else if (e.which === 88 && e.altKey) {
+      const tmp = new Tools();
+      tmp.move();
+    } else if (e.which === 83 && e.altKey) {
+      const tmp = new Tools();
+      tmp.storage();
+    } else if (e.which === 81 && e.altKey) {
+      const tmp = new Tools();
+      tmp.bucket();
+    }
+  });
 
+  function transformElement(node) {
     if (!node.style.borderRadius || node.style.borderRadius === '0%') {
       node.style.borderRadius = '50%';
     } else {
@@ -131,57 +177,6 @@ window.onload = function () {
     }
   }
 
-  function changeColor(node) {
-    const tmp = colorCurrent;
-    if (colorCurrent === getComputedStyle(node).backgroundColor) return;
+  
 
-    console.log(node.firstElementChild);
-
-
-    document.querySelector('.tools__list__color-1').style.backgroundColor = getComputedStyle(node).backgroundColor;
-    colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
-    document.querySelector('.tools__list__color-2').style.backgroundColor = tmp;
-  }
-
-  function paintShape(node) {
-    node.style.backgroundColor = colorCurrent;
-  }
-
-  function addStyleObject() {
-    const obj = {};
-
-    divCanvas = document.getElementsByClassName('item');
-    const divCanvasMove = document.getElementsByClassName('item-move');
-
-    for (let i = 0; i < divCanvas.length; i+=1) {
-      obj[i] = divCanvas[i].outerHTML;
-    }
-    const seralObj = JSON.stringify(obj);
-    return seralObj;
-  }
-
-  function moveShape(node) {
-    node.className = 'item item-move';
-    moveAt(event);
-
-    canvas.insertBefore(node, node);
-    console.log(node);
-
-
-    node.style.zIndex = 1000;
-
-    function moveAt(e) {
-      node.style.left = `${e.pageX - node.offsetWidth / 2}px`;
-      node.style.top = `${e.pageY - node.offsetHeight / 2}px`;
-    }
-
-    canvas.onmousemove = function (e) {
-      moveAt(e);
-    };
-
-    node.onmouseup = function () {
-      canvas.onmousemove = null;
-      node.onmouseup = null;
-    };
-  }
 };
