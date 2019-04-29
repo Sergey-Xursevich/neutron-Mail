@@ -152,19 +152,19 @@ window.onload = function () {
 
   document.addEventListener('keydown', (e) => {
     if (e.which === 65 && e.altKey) {
-      const tmp = new Tools();
+      const tmp = new Tools(tools__list);
       tmp.picker();
     } else if (e.which === 90 && e.altKey) {
-      const tmp = new Tools();
+      const tmp = new Tools(tools__list);
       tmp.transform();
     } else if (e.which === 88 && e.altKey) {
-      const tmp = new Tools();
+      const tmp = new Tools(tools__list);
       tmp.move();
     } else if (e.which === 83 && e.altKey) {
-      const tmp = new Tools();
+      const tmp = new Tools(tools__list);
       tmp.storage();
     } else if (e.which === 81 && e.altKey) {
-      const tmp = new Tools();
+      const tmp = new Tools(tools__list);
       tmp.bucket();
     }
   });
@@ -176,7 +176,4 @@ window.onload = function () {
       node.style.borderRadius = '0%';
     }
   }
-
-  
-
 };
