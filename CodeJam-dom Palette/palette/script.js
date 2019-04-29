@@ -30,14 +30,14 @@ window.onload = function () {
   }
 
   function paintShape(node) {
-    node.style.backgroundColor = colorCurrent;
+    const element = node;
+    element.style.backgroundColor = colorCurrent;
   }
 
   function addStyleObject() {
     const obj = {};
 
     divCanvas = document.getElementsByClassName('item');
-    const divCanvasMove = document.getElementsByClassName('item-move');
 
     for (let i = 0; i < divCanvas.length; i+=1) {
       obj[i] = divCanvas[i].outerHTML;
@@ -47,25 +47,30 @@ window.onload = function () {
   }
 
   function moveShape(node) {
-    node.className = 'item item-move';
-    moveAt(event);
-
-    canvas.insertBefore(node, node);
-
-    node.style.zIndex = 1000;
+    const element = node;
+    element.className = 'item item-move';
 
     function moveAt(e) {
-      node.style.left = `${e.pageX - node.offsetWidth / 2}px`;
-      node.style.top = `${e.pageY - node.offsetHeight / 2}px`;
+      const parametr = e;
+
+      element.style.left = `${parametr.pageX - element.offsetWidth / 2}px`;
+      element.style.top = `${parametr.pageY - element.offsetHeight / 2}px`;
     }
 
+    moveAt(event);
+
+    canvas.insertBefore(element, element);
+    element.style.zIndex = 1000;
+
     canvas.onmousemove = function (e) {
-      moveAt(e);
+      const parametr = e;
+
+      moveAt(parametr);
     };
 
-    node.onmouseup = function () {
+    element.onmouseup = function () {
       canvas.onmousemove = null;
-      node.onmouseup = null;
+      element.onmouseup = null;
     };
   }
 
@@ -149,7 +154,8 @@ window.onload = function () {
     };
   }
 
-  new Tools(toolsList);
+  const tools = new Tools(toolsList);
+  Tools(toolsList);
 
   document.addEventListener('keydown', (e) => {
     if (e.which === 65 && e.altKey) {
@@ -171,10 +177,12 @@ window.onload = function () {
   });
 
   function transformElement(node) {
-    if (!node.style.borderRadius || node.style.borderRadius === '0%') {
-      node.style.borderRadius = '50%';
+    const element = node;
+
+    if (!element.style.borderRadius || element.style.borderRadius === '0%') {
+      element.style.borderRadius = '50%';
     } else {
-      node.style.borderRadius = '0%';
+      element.style.borderRadius = '0%';
     }
   }
 };
