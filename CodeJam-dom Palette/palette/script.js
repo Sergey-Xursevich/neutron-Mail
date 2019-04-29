@@ -3,7 +3,7 @@ window.onload = function () {
   const canvas = document.querySelector('.canvas__wrapper');
   const picker = document.querySelector('.pallete__colors');
   let colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
-  let toolsList = document.getElementById("tools__list");
+  const toolsList = document.getElementById('tools__list');
   let key = null;
   let e = null;
 
@@ -39,7 +39,7 @@ window.onload = function () {
 
     divCanvas = document.getElementsByClassName('item');
 
-    for (let i = 0; i < divCanvas.length; i+=1) {
+    for (let i = 0; i < divCanvas.length; i += 1) {
       obj[i] = divCanvas[i].outerHTML;
     }
     const seralObj = JSON.stringify(obj);
@@ -74,6 +74,16 @@ window.onload = function () {
     };
   }
 
+  function transformElement(node) {
+    const element = node;
+
+    if (!element.style.borderRadius || element.style.borderRadius === '0%') {
+      element.style.borderRadius = '50%';
+    } else {
+      element.style.borderRadius = '0%';
+    }
+  }
+
   canvas.addEventListener('click', (event) => {
     let target = event.target;
 
@@ -92,6 +102,8 @@ window.onload = function () {
           case 'move':
             moveShape(target);
             break;
+          default:
+            return;
         }
       }
       target = target.parentNode;
@@ -175,14 +187,4 @@ window.onload = function () {
       tmp.bucket();
     }
   });
-
-  function transformElement(node) {
-    const element = node;
-
-    if (!element.style.borderRadius || element.style.borderRadius === '0%') {
-      element.style.borderRadius = '50%';
-    } else {
-      element.style.borderRadius = '0%';
-    }
-  }
 };

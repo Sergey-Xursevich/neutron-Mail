@@ -8,11 +8,6 @@ module.exports = {
         "ecmaVersion": 2018
     },
     "rules": {
-        "prefer-destructuring": ["error", {
-            "array": true,
-            "object": true
-          }, {
-            "enforceForRenamedProperties": false
-          }]
+        
     }
 };
