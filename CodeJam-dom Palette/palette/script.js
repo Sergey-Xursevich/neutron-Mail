@@ -2,8 +2,9 @@ window.onload = function () {
   let divCanvas = document.getElementsByClassName('item');
   const canvas = document.querySelector('.canvas__wrapper');
   const picker = document.querySelector('.pallete__colors');
-  let key = null;
   let colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
+  let toolsList = document.getElementById("tools__list");
+  let key = null;
   let e = null;
 
   if (localStorage.getItem('myKey') !== null) {
@@ -148,23 +149,23 @@ window.onload = function () {
     };
   }
 
-  new Tools(tools__list);
+  new Tools(toolsList);
 
   document.addEventListener('keydown', (e) => {
     if (e.which === 65 && e.altKey) {
-      const tmp = new Tools(tools__list);
+      const tmp = new Tools(toolsList);
       tmp.picker();
     } else if (e.which === 90 && e.altKey) {
-      const tmp = new Tools(tools__list);
+      const tmp = new Tools(toolsList);
       tmp.transform();
     } else if (e.which === 88 && e.altKey) {
-      const tmp = new Tools(tools__list);
+      const tmp = new Tools(toolsList);
       tmp.move();
     } else if (e.which === 83 && e.altKey) {
-      const tmp = new Tools(tools__list);
+      const tmp = new Tools(toolsList);
       tmp.storage();
     } else if (e.which === 81 && e.altKey) {
-      const tmp = new Tools(tools__list);
+      const tmp = new Tools(toolsList);
       tmp.bucket();
     }
   });
