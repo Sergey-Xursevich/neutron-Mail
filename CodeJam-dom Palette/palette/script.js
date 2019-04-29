@@ -5,7 +5,6 @@ window.onload = function () {
   let colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
   const toolsList = document.getElementById('tools__list');
   let key = null;
-  let e = null;
 
   if (localStorage.getItem('myKey') !== null) {
     const desObj = JSON.parse(localStorage.getItem('myKey'));
@@ -56,7 +55,6 @@ window.onload = function () {
       element.style.left = `${parametr.pageX - element.offsetWidth / 2}px`;
       element.style.top = `${parametr.pageY - element.offsetHeight / 2}px`;
     }
-
     moveAt(event);
 
     canvas.insertBefore(element, element);
@@ -138,8 +136,6 @@ window.onload = function () {
       document.querySelector('.pallete__canvas').style.cssText = 'cursor: move';
       key = 'move';
       picker.style.display = 'none';
-      e = elem;
-      checkMove = true;
     };
     this.transform = function () {
       document.querySelector('.pallete__canvas').style.cssText = 'cursor: nesw-resize';
@@ -157,18 +153,16 @@ window.onload = function () {
 
     const self = this;
 
-    elem.onclick = function (event) {
+    elem.addEventListener('click', (event) => {
       const target = event.target;
       const action = target.getAttribute('data-action');
       if (action) {
         self[action]();
       }
-    };
+    });
   }
 
-  const tools = new Tools(toolsList);
-  Tools(toolsList);
-
+  new Tools(toolsList);
   document.addEventListener('keydown', (e) => {
     if (e.which === 65 && e.altKey) {
       const tmp = new Tools(toolsList);
