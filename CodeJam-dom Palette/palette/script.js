@@ -5,6 +5,13 @@ window.onload = function () {
   let colorCurrent = getComputedStyle(document.querySelector('.tools__list__color-1')).backgroundColor;
   const toolsList = document.getElementById('tools__list');
   let key = null;
+  const keyboard = {
+    move: 88,
+    bucket: 81,
+    color: 65,
+    transform: 90,
+    save: 83,
+  };
 
   if (localStorage.getItem('myKey') !== null) {
     const desObj = JSON.parse(localStorage.getItem('myKey'));
@@ -164,19 +171,19 @@ window.onload = function () {
 
   new Tools(toolsList);
   document.addEventListener('keydown', e => {
-    if (e.which === 65 && e.altKey) {
+    if (e.which === keyboard.color && e.altKey) {
       const tmp = new Tools(toolsList);
       tmp.picker();
-    } else if (e.which === 90 && e.altKey) {
+    } else if (e.which === keyboard.transform && e.altKey) {
       const tmp = new Tools(toolsList);
       tmp.transform();
-    } else if (e.which === 88 && e.altKey) {
+    } else if (e.which === keyboard.move && e.altKey) {
       const tmp = new Tools(toolsList);
       tmp.move();
-    } else if (e.which === 83 && e.altKey) {
+    } else if (e.which === keyboard.save && e.altKey) {
       const tmp = new Tools(toolsList);
       tmp.storage();
-    } else if (e.which === 81 && e.altKey) {
+    } else if (e.which === keyboard.bucket && e.altKey) {
       const tmp = new Tools(toolsList);
       tmp.bucket();
     }
