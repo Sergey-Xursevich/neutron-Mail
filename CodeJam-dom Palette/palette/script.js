@@ -16,11 +16,14 @@ window.onload = function () {
   if (localStorage.getItem('myKey') !== null) {
     const desObj = JSON.parse(localStorage.getItem('myKey'));
     for (key in desObj) {
+      if (desObj[key].indexOf('tmp-circle') !== -1) {
+        divCanvas[key].classList.add('tmp-circle');
+      } 
       if (desObj[key].indexOf('style=') !== -1) {
         const css = desObj[key].slice(desObj[key].indexOf('style=') + 7, -9);
         divCanvas[key].style.cssText = css;
         if (css.indexOf('top') !== -1) {
-          divCanvas[key].style.position = 'absolute';
+          divCanvas[key].classList.add('tmp');
         }
       }
     }
@@ -81,12 +84,7 @@ window.onload = function () {
 
   function transformElement(node) {
     const element = node;
-
-    if (!element.style.borderRadius || element.style.borderRadius === '0%') {
-      element.style.borderRadius = '50%';
-    } else {
-      element.style.borderRadius = '0%';
-    }
+    element.classList.toggle('tmp-circle');
   }
 
   canvas.addEventListener('click', event => {
@@ -131,23 +129,23 @@ window.onload = function () {
     this.bucket = function () {
       document.querySelector('.pallete__canvas').style.cssText = 'cursor: crosshair';
       key = 'bucket';
-      picker.style.display = 'none';
+      picker.classList.remove('tmp-picker');
     };
     this.picker = function () {
       document.querySelector('.pallete__canvas').style.cssText = 'cursor: copy';
       document.querySelector('.pallete__colors').style.cssText = 'cursor: copy';
       key = 'picker';
-      picker.style.display = 'block';
+      picker.classList.add('tmp-picker');
     };
     this.move = function () {
       document.querySelector('.pallete__canvas').style.cssText = 'cursor: move';
       key = 'move';
-      picker.style.display = 'none';
+      picker.classList.remove('tmp-picker');
     };
     this.transform = function () {
       document.querySelector('.pallete__canvas').style.cssText = 'cursor: nesw-resize';
       key = 'transform';
-      picker.style.display = 'none';
+      picker.classList.remove('tmp-picker');
     };
     this.storage = function () {
       const res = confirm('Вы желаете сохранить результат?');

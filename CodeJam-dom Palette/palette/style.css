@@ -225,4 +225,16 @@ header {
   background-color: #8B8C7A;
   margin: 2.5px 5px 2.5px;
 }
+
+.tmp {
+  position: absolute;
+}
+
+.tmp-circle {
+  border-radius: 50%;
+}
+
+.tmp-picker {
+  display: block;
+}
 /*# sourceMappingURL=style.css.map */

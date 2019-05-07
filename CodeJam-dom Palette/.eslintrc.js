@@ -14,6 +14,7 @@ module.exports = {
         "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],     
         "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["elem"] }],
         "no-new": 0,
-        "prefer-const": ["error", { "destructuring": "any", "ignoreReadBeforeAssign": true }]  
+        "prefer-const": [true, {"destructuring": "all"}],
+        "arrow-parens": ["error", "as-needed"] 
     }
 };
