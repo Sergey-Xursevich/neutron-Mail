@@ -82,7 +82,7 @@ window.onload = function () {
     }
   }
 
-  canvas.addEventListener('click', (event) => {
+  canvas.addEventListener('click', event => {
     let { target, target: { tagName, parentNode } } = event;
 
     while (target !== canvas) {
@@ -108,7 +108,7 @@ window.onload = function () {
     }
   });
 
-  picker.addEventListener('click', (event) => {
+  picker.addEventListener('click', event => {
     let { target, target: { tagName, parentNode } } = event;
 
     while (target !== picker) {
@@ -153,7 +153,7 @@ window.onload = function () {
 
     const self = this;
 
-    elem.addEventListener('click', (event) => {
+    elem.addEventListener('click', event => {
       const target = event.target;
       const action = target.getAttribute('data-action');
       if (action) {
@@ -163,7 +163,7 @@ window.onload = function () {
   }
 
   new Tools(toolsList);
-  document.addEventListener('keydown', (e) => {
+  document.addEventListener('keydown', e => {
     if (e.which === 65 && e.altKey) {
       const tmp = new Tools(toolsList);
       tmp.picker();
