@@ -137,6 +137,10 @@ header {
   background-repeat: no-repeat;
 }
 
+.tools__list__image:hover {
+  cursor: pointer;
+}
+
 .tools__list__image-1 {
   background: url("img/bucket.png");
   background-size: 24px 24px;
