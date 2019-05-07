@@ -83,10 +83,10 @@ window.onload = function () {
   }
 
   canvas.addEventListener('click', (event) => {
-    let target = event.target;
+    let { target, target: { tagName, parentNode } } = event;
 
     while (target !== canvas) {
-      if (target.tagName === 'DIV') {
+      if (tagName === 'DIV') {
         switch (key) {
           case 'transform':
             transformElement(target);
@@ -104,19 +104,19 @@ window.onload = function () {
             return;
         }
       }
-      target = target.parentNode;
+      target = parentNode;
     }
   });
 
   picker.addEventListener('click', (event) => {
-    let target = event.target;
+    let { target, target: { tagName, parentNode } } = event;
 
     while (target !== picker) {
-      if (target.tagName === 'DIV') {
+      if (tagName === 'DIV') {
         changeColor(target);
         return;
       }
-      target = target.parentNode;
+      target = parentNode;
     }
   });
 
