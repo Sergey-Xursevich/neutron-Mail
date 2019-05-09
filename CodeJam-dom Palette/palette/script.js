@@ -169,19 +169,20 @@ window.onload = function () {
 
   new Tools(toolsList);
   document.addEventListener('keydown', e => {
-    if (e.which === keyboard.color && e.altKey) {
+    const { which, altKey } = e;
+    if (which === keyboard.color && altKey) {
       const tmp = new Tools(toolsList);
       tmp.picker();
-    } else if (e.which === keyboard.transform && e.altKey) {
+    } else if (which === keyboard.transform && altKey) {
       const tmp = new Tools(toolsList);
       tmp.transform();
-    } else if (e.which === keyboard.move && e.altKey) {
+    } else if (which === keyboard.move && altKey) {
       const tmp = new Tools(toolsList);
       tmp.move();
-    } else if (e.which === keyboard.save && e.altKey) {
+    } else if (which === keyboard.save && altKey) {
       const tmp = new Tools(toolsList);
       tmp.storage();
-    } else if (e.which === keyboard.bucket && e.altKey) {
+    } else if (which === keyboard.bucket && altKey) {
       const tmp = new Tools(toolsList);
       tmp.bucket();
     }
