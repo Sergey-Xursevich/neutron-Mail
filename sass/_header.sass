@@ -1,0 +1,242 @@
+header
+  height: 908px 
+  background-image: url('../img/background.jpg')
+  background-repeat: no-repeat
+  background-position: top
+  background-size: 100% 109%
+.nav
+  display: flex
+  flex-wrap: wrap
+  padding: 75px 200px 105px 197px
+  &__wrapper
+    display: flex
+    justify-content: flex-end
+  &__logo
+    margin-top: 12px
+    margin-right: 493px
+  &__logotip
+    margin: 0 0 11px
+    font-family: 'Titillium Web Bold', sans-serif
+    color: #858688
+    font-size: 30px
+    line-height: 14px
+    letter-spacing: 0.06px
+    margin-bottom: 30px
+    &-span
+      color: #5b4295
+      letter-spacing: 0.06px
+  &__language
+    display: inline-block
+    position: relative
+    color: #959595
+    font-size: 14px
+    text-decoration: none
+    outline: none
+    &:hover:not(.nav__language--active)
+      color: #5b4295
+      font-weight: bold
+    &__link
+      display: flex
+      width: 236px
+      height: 20px
+      justify-content: space-between
+    &--active
+      font-weight: bold
+      letter-spacing: 1px
+      &::before
+        display: block
+        content: ""
+        background-color: rgba(100, 115, 151, 0.49)
+        height: 1px
+        width: 80%
+        left: 40%
+        bottom: 0px
+        position: absolute
+        transition: width .3s ease-in-out
+        transform: translateX(-50%)
+    &:nth-child(1)::after
+      content: "/"
+      margin: 0 1px 0 7px
+      font-weight: normal
+    &:nth-child(2)::after
+      content: "/"
+      margin: 0 1px 0 10px
+      font-weight: normal
+    &:nth-child(3)::after
+      content: "/"
+      margin: 0 1px 0 10px
+      font-weight: normal
+  &__list
+    display: flex
+    height: 41px
+    align-items: center
+    &__wrapper
+      margin-right: 69px
+      width: 419px
+      display: flex
+      justify-content: space-between
+  &__link
+    color: #454545
+    font-size: 16px
+    margin-right: 7px
+    text-decoration: none
+    transition: all 3s
+    outline: none
+    display: inline-block
+    position: relative
+    &::before
+      display: block
+      content: ""
+      background-color: #5B4295
+      height: 1px
+      width: 0%
+      left: 50%
+      bottom: 0px
+      position: absolute
+      transition: width .3s ease-in-out
+      transform: translateX(-50%)
+    &:hover:before
+      width: 100%
+    &:not(:first-child)
+      margin: 0 5px
+  &__admin
+    font-family: 'Titillium Web Bold', sans-serif
+    color: black
+    letter-spacing: 0.16px
+    margin-right: 23px
+    text-decoration: none
+    &__sign-in
+       color: #582c7e
+       letter-spacing: 0.16px
+       margin-right: 9px
+
+.btn-nav
+  padding: 10px 21px
+  font-size: 16px
+  box-shadow: 0px 8px 10px #abb8da
+  background: linear-gradient(to bottom right, #582c7e, #616fc5)
+  &:hover
+    cursor: pointer
+    background: linear-gradient(to bottom right, #301944, #3f7bc1)
+
+.title
+  display: flex
+  flex-direction: column
+  align-items: center
+  &__slogan
+    margin-bottom: 4px
+    opacity: 0.84
+    color: #454545
+    font-family: 'Titillium Web Bold', sans-serif
+    font-size: 60px
+    letter-spacing: 0.2px
+  &__subtitle
+    margin: 0
+    color: #636362
+    font-size: 36px
+    letter-spacing: 0.36px
+    line-height: 56px
+    margin-bottom: 66px
+    &--span
+      color: #fc2028
+
+.social
+  width: 602px
+  display: flex
+  justify-content: center
+  align-items: center
+.btn-social
+  color: #ffffff
+  font-size: 18px
+  line-height: 42px
+  padding: 8px 64px
+  background: linear-gradient(to left, #5f2966, #636b92)
+  margin-right: 27px
+  &:hover
+    cursor: pointer
+    background: linear-gradient(to left, #6b0f77, #566cd8)
+
+.btn__link--social
+    color: #ffffff
+    font-size: 22px
+    line-height: 44px
+    width: 46px
+    height: 46px
+    background-color: #5f2966
+    opacity: 0.8
+    display: inline-block
+    border-radius: 22px 
+    text-align: center
+    &:last-child
+      margin-left: 20px
+    &:hover
+      cursor: pointer
+      background: linear-gradient(to left, #6b0f77, #566cd8)
+
+.link__social
+  display: flex
+  flex-direction: column
+  margin: 59px 34px 0px 468px
+  &--icon
+    opacity: 0.82
+    color: #454545
+    font-size: 22px
+    line-height: 37px
+    &:nth-child(1):hover
+      color: #ff0000
+    &:nth-child(2):hover
+      color: #0000ff
+    &:nth-child(3):hover
+      color: #00e5e5 
+ 
+.menu 
+  text-align: right
+  &__icon 
+    display: none
+    width: 28px
+    height: 10px
+    position: relative
+    left: 250px
+    cursor: pointer
+    span
+      display: block
+      position: absolute
+      height: 4px
+      width: 100%
+      background-color: #858688
+      border-radius: 12px
+      opacity: 1
+      transform: rotate(0deg)
+      //transition: .25s ease-in-out
+      &:nth-child(1)
+        top: 0px
+      &:nth-child(2), &:nth-child(3) 
+        top: 10px
+      &:nth-child(4)
+        top: 20px
+
+.menu.menu_state_open .menu__icon span:nth-child(1) 
+  top: 18px
+  width: 0%
+  left: 50%
+
+.menu.menu_state_open .menu__icon span:nth-child(2) 
+  transform: rotate(45deg)
+
+
+.menu.menu_state_open .menu__icon span:nth-child(3) 
+  transform: rotate(-45deg)
+
+
+.menu.menu_state_open .menu__icon span:nth-child(4) 
+  top: 18px
+  width: 0%
+  left: 50%
+
+
+.menu.menu_state_open .menu__links
+  display: flex
+  justify-content: center 
+
+
+  
